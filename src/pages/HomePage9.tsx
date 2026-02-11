@@ -12,7 +12,7 @@ export default function HomePage9() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Split Hero */}
-      <section className="min-h-screen grid lg:grid-cols-2">
+      <section className="min-h-screen grid lg:grid-cols-2 pt-20">
         {/* Left Panel */}
         <div className="relative bg-indigo-600 flex items-center justify-center p-12 order-2 lg:order-1">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />

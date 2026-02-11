@@ -12,7 +12,7 @@ export default function HomePage8() {
   return (
     <div className="min-h-screen bg-[#f5f3f0] dark:bg-gray-900">
       {/* Editorial Hero */}
-      <section className="min-h-screen relative">
+      <section className="min-h-screen relative pt-20">
         <div className="container mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
             {/* Left Text */}

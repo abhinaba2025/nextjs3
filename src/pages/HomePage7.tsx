@@ -21,7 +21,7 @@ export default function HomePage7() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Fun Gradient Hero */}
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-pink-900/20 dark:via-purple-900/20 dark:to-blue-900/20">
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-pink-900/20 dark:via-purple-900/20 dark:to-blue-900/20 pt-20">
         {/* Floating Shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(10)].map((_, i) => (

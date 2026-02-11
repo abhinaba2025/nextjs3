@@ -14,7 +14,7 @@ export default function HomePage6() {
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-white">
       {/* Cinematic Hero */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-20">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920"

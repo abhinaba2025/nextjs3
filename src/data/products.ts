@@ -119,7 +119,7 @@ export const products: Product[] = [
       'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop',
       'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop'
     ],
-    category: 'Home',
+    category: 'Home & Living',
     badge: 'new',
     description: 'Artisan ceramic coffee set including 4 cups and pour-over dripper.',
     inStock: true,
@@ -400,6 +400,216 @@ export const products: Product[] = [
       colors: ['Brown', 'Black', 'Tan'],
       sizes: ['30', '32', '34', '36', '38', '40']
     }
+  },
+  // Home & Living Products
+  {
+    id: 19,
+    slug: 'modern-table-lamp',
+    name: 'Modern Table Lamp',
+    price: 129.99,
+    originalPrice: 159.99,
+    rating: 4.7,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'sale',
+    description: 'Elegant modern table lamp with adjustable brightness and minimalist design.',
+    inStock: true,
+    isFeatured: true,
+    variants: {
+      colors: ['Brass', 'Black', 'White']
+    }
+  },
+  {
+    id: 20,
+    slug: 'velvet-throw-pillow-set',
+    name: 'Velvet Throw Pillow Set',
+    price: 89.99,
+    rating: 4.8,
+    reviews: 189,
+    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1629949009765-40fc74c9ec21?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'new',
+    description: 'Set of 4 luxurious velvet throw pillows with hidden zipper closure.',
+    inStock: true,
+    isNew: true,
+    variants: {
+      colors: ['Emerald', 'Navy', 'Blush', 'Mustard']
+    }
+  },
+  {
+    id: 21,
+    slug: 'scandinavian-armchair',
+    name: 'Scandinavian Armchair',
+    price: 449.99,
+    originalPrice: 549.99,
+    rating: 4.9,
+    reviews: 156,
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'hot',
+    description: 'Mid-century modern armchair with solid oak legs and premium fabric upholstery.',
+    inStock: true,
+    isFeatured: true,
+    variants: {
+      colors: ['Grey', 'Blue', 'Green', 'Beige']
+    }
+  },
+  {
+    id: 22,
+    slug: 'marble-coffee-table',
+    name: 'Marble Coffee Table',
+    price: 599.99,
+    rating: 4.8,
+    reviews: 98,
+    image: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    description: 'Stunning marble top coffee table with gold-finished steel frame.',
+    inStock: true,
+    variants: {
+      colors: ['White Marble', 'Black Marble', 'Green Marble']
+    }
+  },
+  {
+    id: 23,
+    slug: 'handwoven-area-rug',
+    name: 'Handwoven Area Rug',
+    price: 299.99,
+    originalPrice: 399.99,
+    rating: 4.7,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1531835551805-16d864c8d311?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'sale',
+    description: '100% wool handwoven area rug with traditional patterns and modern colors.',
+    inStock: true,
+    variants: {
+      colors: ['Ivory/Grey', 'Blue/Cream', 'Terracotta'],
+      sizes: ['5x7', '8x10', '9x12']
+    }
+  },
+  {
+    id: 24,
+    slug: 'ceramic-vase-collection',
+    name: 'Ceramic Vase Collection',
+    price: 79.99,
+    rating: 4.6,
+    reviews: 145,
+    image: 'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'new',
+    description: 'Set of 3 handcrafted ceramic vases in varying sizes with matte finish.',
+    inStock: true,
+    isNew: true,
+    variants: {
+      colors: ['White', 'Sage', 'Terracotta', 'Black']
+    }
+  },
+  {
+    id: 25,
+    slug: 'linen-bedding-set',
+    name: 'Luxury Linen Bedding Set',
+    price: 349.99,
+    originalPrice: 429.99,
+    rating: 4.9,
+    reviews: 312,
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'hot',
+    description: 'Premium 100% French linen bedding set including duvet cover and 2 pillowcases.',
+    inStock: true,
+    isFeatured: true,
+    variants: {
+      colors: ['White', 'Natural', 'Dusty Rose', 'Sage'],
+      sizes: ['Queen', 'King', 'Cal King']
+    }
+  },
+  {
+    id: 26,
+    slug: 'floating-wall-shelves',
+    name: 'Floating Wall Shelves Set',
+    price: 89.99,
+    rating: 4.5,
+    reviews: 278,
+    image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    description: 'Set of 3 solid wood floating shelves with invisible mounting hardware.',
+    inStock: true,
+    variants: {
+      colors: ['Natural Oak', 'Walnut', 'White', 'Black']
+    }
+  },
+  {
+    id: 27,
+    slug: 'scented-candle-set',
+    name: 'Luxury Scented Candle Set',
+    price: 69.99,
+    rating: 4.8,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    badge: 'new',
+    description: 'Set of 3 hand-poured soy candles with premium essential oil fragrances.',
+    inStock: true,
+    isNew: true,
+    variants: {
+      colors: ['Lavender', 'Vanilla', 'Sandalwood', 'Sea Salt']
+    }
+  },
+  {
+    id: 28,
+    slug: 'indoor-plant-pot-set',
+    name: 'Ceramic Plant Pot Set',
+    price: 59.99,
+    rating: 4.6,
+    reviews: 189,
+    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&h=600&fit=crop'
+    ],
+    category: 'Home & Living',
+    description: 'Set of 3 minimalist ceramic plant pots with bamboo trays and drainage holes.',
+    inStock: true,
+    variants: {
+      colors: ['White', 'Terracotta', 'Sage', 'Black']
+    }
   }
 ];
 
@@ -407,7 +617,7 @@ export const categories = [
   {
     id: 1,
     name: 'Electronics',
-    slug: 'Electronics',
+    slug: 'electronics',
     image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&h=600&fit=crop',
     count: 24,
     description: 'Discover cutting-edge technology and gadgets'
@@ -415,7 +625,7 @@ export const categories = [
   {
     id: 2,
     name: 'Fashion',
-    slug: 'Fashion',
+    slug: 'fashion',
     image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop',
     count: 36,
     description: 'Elevate your style with premium fashion'
@@ -423,7 +633,7 @@ export const categories = [
   {
     id: 3,
     name: 'Home & Living',
-    slug: 'Home',
+    slug: 'home-living',
     image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop',
     count: 18,
     description: 'Transform your living space'
@@ -431,7 +641,7 @@ export const categories = [
   {
     id: 4,
     name: 'Sports',
-    slug: 'Sports',
+    slug: 'sports',
     image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop',
     count: 12,
     description: 'Gear up for peak performance'

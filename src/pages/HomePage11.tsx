@@ -19,7 +19,7 @@ export default function HomePage11() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Modern Hero with Masonry Preview */}
-      <section className="py-20 bg-gradient-to-br from-violet-600 to-indigo-600">
+      <section className="pt-28 pb-20 bg-gradient-to-br from-violet-600 to-indigo-600">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

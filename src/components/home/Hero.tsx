@@ -44,7 +44,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden pt-20">
       {/* Background Slides */}
       <AnimatePresence mode="wait">
         <motion.div

@@ -36,7 +36,7 @@ export default function HomePage3() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Full Screen Hero Slider */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-20">
         {slides.map((slide, index) => (
           <motion.div
             key={index}

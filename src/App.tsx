@@ -14,6 +14,7 @@ import AllProductsPage from './pages/AllProductsPage';
 import ShopElectronicsPage from './pages/ShopElectronicsPage';
 import ShopFashionPage from './pages/ShopFashionPage';
 import ShopSportsPage from './pages/ShopSportsPage';
+import ShopHomeLivingPage from './pages/ShopHomeLiving';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
@@ -55,8 +56,9 @@ function App() {
             <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
               <Header />
               <CartDrawer />
-              <AnimatePresence mode="wait">
-                <Routes>
+              <main>
+                <AnimatePresence mode="wait">
+                  <Routes>
                   {/* Main Pages */}
                   <Route path="/" element={<HomePage />} />
                   <Route path="/shop" element={<ShopPage />} />
@@ -64,6 +66,7 @@ function App() {
                   <Route path="/shop/electronics" element={<ShopElectronicsPage />} />
                   <Route path="/shop/fashion" element={<ShopFashionPage />} />
                   <Route path="/shop/sports" element={<ShopSportsPage />} />
+                  <Route path="/shop/home-living" element={<ShopHomeLivingPage />} />
                   <Route path="/product/:slug" element={<ProductPage />} />
                   <Route path="/cart" element={<CartPage />} />
                   <Route path="/checkout" element={<CheckoutPage />} />
@@ -97,7 +100,8 @@ function App() {
                   
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
-              </AnimatePresence>
+                </AnimatePresence>
+              </main>
               <Footer />
             </div>
           </Router>

@@ -14,7 +14,7 @@ export default function HomePage10() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Video Hero */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-20">
         {/* Video Background (using image as fallback) */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/50 z-10" />

@@ -13,7 +13,7 @@ export default function HomePage5() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3">
+      <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 mt-20">
         <div className="container mx-auto px-4 flex items-center justify-center gap-4 text-sm">
           <Tag className="w-4 h-4" />
           <span>Flash Sale! Up to 50% OFF - Limited Time Only</span>

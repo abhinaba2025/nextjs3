@@ -10,7 +10,7 @@ export default function HomePage2() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Minimal Hero */}
-      <section className="relative min-h-[90vh] flex items-center">
+      <section className="relative min-h-screen flex items-center pt-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

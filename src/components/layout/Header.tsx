@@ -61,6 +61,12 @@ export function Header() {
       description: 'Trending styles & accessories'
     },
     { 
+      name: 'Home & Living', 
+      path: '/shop/home-living', 
+      icon: '🏠',
+      description: 'Furniture, decor & home essentials'
+    },
+    { 
       name: 'Sports', 
       path: '/shop/sports', 
       icon: '⚽',

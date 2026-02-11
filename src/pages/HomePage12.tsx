@@ -18,7 +18,7 @@ export default function HomePage12() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#0f0f0f]">
       {/* App-Style Hero */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-20">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-rose-100 via-purple-50 to-teal-100 dark:from-rose-900/20 dark:via-purple-900/20 dark:to-teal-900/20" />
         

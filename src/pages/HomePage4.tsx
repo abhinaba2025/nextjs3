@@ -12,7 +12,7 @@ export default function HomePage4() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white overflow-hidden">
       {/* Futuristic Hero */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center pt-20">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-transparent to-purple-900/20" />
