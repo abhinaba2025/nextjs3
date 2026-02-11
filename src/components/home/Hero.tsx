@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 
@@ -10,6 +11,7 @@ const slides = [
     description: 'Explore our curated collection of cutting-edge technology and smart devices.',
     image: 'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=1920&q=80',
     cta: 'Shop Electronics',
+    link: '/shop/electronics',
   },
   {
     id: 2,
@@ -18,14 +20,16 @@ const slides = [
     description: 'Elevate your style with our latest trendy and comfortable fashion pieces.',
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80',
     cta: 'Explore Fashion',
+    link: '/shop/fashion',
   },
   {
     id: 3,
-    title: 'Home & Living Essentials',
-    subtitle: 'Transform Your Space',
-    description: 'Create your dream home with our exclusive furniture and decor collection.',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80',
-    cta: 'Shop Home',
+    title: 'Sports & Fitness Gear',
+    subtitle: 'Get Active',
+    description: 'Gear up for peak performance with our premium sports equipment and accessories.',
+    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80',
+    cta: 'Shop Sports',
+    link: '/shop/sports',
   },
 ];
 
@@ -103,12 +107,16 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button size="lg">
-                {slides[currentSlide].cta}
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-900">
-                View All Products
-              </Button>
+              <Link to={slides[currentSlide].link}>
+                <Button size="lg">
+                  {slides[currentSlide].cta}
+                </Button>
+              </Link>
+              <Link to="/shop/all">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-900">
+                  View All Products
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </AnimatePresence>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Heart, Search, Menu, X, Sun, Moon } from 'lucide-react';
+import { ShoppingBag, Heart, Search, Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -11,6 +11,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const { totalItems, toggleCart } = useCart();
   const { items: wishlistItems } = useWishlist();
   const { theme, toggleTheme } = useTheme();
@@ -23,9 +24,35 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const shopCategories = [
+    { 
+      name: 'All Products', 
+      path: '/shop/all', 
+      icon: '🛍️',
+      description: 'Browse our complete collection'
+    },
+    { 
+      name: 'Electronics', 
+      path: '/shop/electronics', 
+      icon: '📱',
+      description: 'Latest gadgets & tech'
+    },
+    { 
+      name: 'Fashion', 
+      path: '/shop/fashion', 
+      icon: '👗',
+      description: 'Trending styles & accessories'
+    },
+    { 
+      name: 'Sports', 
+      path: '/shop/sports', 
+      icon: '⚽',
+      description: 'Gear up for performance'
+    },
+  ];
+
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Shop', path: '/shop' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -37,8 +64,8 @@ export function Header() {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg'
-            : 'bg-transparent'
+            ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg'
+            : 'bg-white dark:bg-slate-900'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +91,94 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map(link => (
+              {navLinks.slice(0, 1).map(link => (
+                <Link key={link.path} to={link.path}>
+                  <motion.span
+                    whileHover={{ y: -2 }}
+                    className={`text-sm font-medium transition-colors ${
+                      location.pathname === link.path
+                        ? 'text-indigo-600'
+                        : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
+                    }`}
+                  >
+                    {link.name}
+                  </motion.span>
+                </Link>
+              ))}
+
+              {/* Shop Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsShopDropdownOpen(true)}
+                onMouseLeave={() => setIsShopDropdownOpen(false)}
+              >
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    location.pathname.startsWith('/shop')
+                      ? 'text-indigo-600'
+                      : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
+                  }`}
+                >
+                  Shop
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isShopDropdownOpen ? 'rotate-180' : ''}`} />
+                </motion.button>
+
+                <AnimatePresence>
+                  {isShopDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                    >
+                      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-4 min-w-[320px]">
+                        <div className="grid gap-2">
+                          {shopCategories.map((category, index) => (
+                            <Link
+                              key={category.path}
+                              to={category.path}
+                              onClick={() => setIsShopDropdownOpen(false)}
+                            >
+                              <motion.div
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                              >
+                                <span className="text-2xl">{category.icon}</span>
+                                <div>
+                                  <p className="font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
+                                    {category.name}
+                                  </p>
+                                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                                    {category.description}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700">
+                          <Link
+                            to="/shop"
+                            onClick={() => setIsShopDropdownOpen(false)}
+                            className="flex items-center justify-center gap-2 w-full py-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors"
+                          >
+                            View All Categories
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {navLinks.slice(1).map(link => (
                 <Link key={link.path} to={link.path}>
                   <motion.span
                     whileHover={{ y: -2 }}
@@ -94,10 +208,11 @@ export function Header() {
 
               {/* Theme Toggle */}
               <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.1, rotate: 15 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
               >
                 {theme === 'light' ? (
                   <Moon className="w-5 h-5 text-slate-600" />
@@ -166,20 +281,64 @@ export function Header() {
               className="lg:hidden bg-white dark:bg-slate-900 border-t dark:border-slate-800"
             >
               <nav className="px-4 py-4 space-y-2">
-                {navLinks.map(link => (
+                <Link
+                  to="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    location.pathname === '/'
+                      ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                      : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                  }`}
+                >
+                  Home
+                </Link>
+
+                {/* Shop Section */}
+                <div className="space-y-1">
+                  <p className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    Shop
+                  </p>
+                  {shopCategories.map((category) => (
+                    <Link
+                      key={category.path}
+                      to={category.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                        location.pathname === category.path
+                          ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                          : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                      }`}
+                    >
+                      <span className="text-lg">{category.icon}</span>
+                      <span>{category.name}</span>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="pt-2 border-t dark:border-slate-800">
                   <Link
-                    key={link.path}
-                    to={link.path}
+                    to="/about"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                      location.pathname === link.path
+                      location.pathname === '/about'
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    {link.name}
+                    About
                   </Link>
-                ))}
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                      location.pathname === '/contact'
+                        ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                        : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    Contact
+                  </Link>
+                </div>
               </nav>
             </motion.div>
           )}
@@ -217,6 +376,22 @@ export function Header() {
                 >
                   <X className="w-5 h-5 text-slate-500" />
                 </button>
+              </div>
+              {/* Quick Links */}
+              <div className="mt-4 pt-4 border-t dark:border-slate-800">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Quick Links</p>
+                <div className="flex flex-wrap gap-2">
+                  {shopCategories.map((cat) => (
+                    <Link
+                      key={cat.path}
+                      to={cat.path}
+                      onClick={() => setIsSearchOpen(false)}
+                      className="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-900 dark:hover:text-indigo-400 transition-colors"
+                    >
+                      {cat.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>

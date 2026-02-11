@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { products, Product } from '../../data/products';
 import ProductCard from '../product/ProductCard';
 import QuickView from '../product/QuickView';
 
-const tabs = ['All', 'Electronics', 'Fashion', 'Home & Living'];
+const tabs = ['All', 'Electronics', 'Fashion', 'Sports'];
 
 export default function FeaturedProducts() {
   const [activeTab, setActiveTab] = useState('All');
@@ -99,13 +100,15 @@ export default function FeaturedProducts() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.button
-            className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 font-semibold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Products
-          </motion.button>
+          <Link to="/shop/all">
+            <motion.button
+              className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 font-semibold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All Products
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
 

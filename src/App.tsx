@@ -8,6 +8,10 @@ import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+import AllProductsPage from './pages/AllProductsPage';
+import ShopElectronicsPage from './pages/ShopElectronicsPage';
+import ShopFashionPage from './pages/ShopFashionPage';
+import ShopSportsPage from './pages/ShopSportsPage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
@@ -29,6 +33,10 @@ function App() {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/shop" element={<ShopPage />} />
+                  <Route path="/shop/all" element={<AllProductsPage />} />
+                  <Route path="/shop/electronics" element={<ShopElectronicsPage />} />
+                  <Route path="/shop/fashion" element={<ShopFashionPage />} />
+                  <Route path="/shop/sports" element={<ShopSportsPage />} />
                   <Route path="/product/:slug" element={<ProductPage />} />
                   <Route path="/cart" element={<CartPage />} />
                   <Route path="/checkout" element={<CheckoutPage />} />

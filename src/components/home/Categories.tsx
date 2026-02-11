@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { categories } from '../../data/products';
 
@@ -47,18 +48,20 @@ export default function Categories() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {categories.map((category) => (
-            <motion.a
+            <Link
               key={category.id}
-              href="#"
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.03,
-                rotateY: 5,
-                rotateX: 5,
-              }}
-              className="group relative h-72 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
-              style={{ perspective: '1000px' }}
+              to={`/shop/${category.slug.toLowerCase()}`}
             >
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.03,
+                  rotateY: 5,
+                  rotateX: 5,
+                }}
+                className="group relative h-72 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                style={{ perspective: '1000px' }}
+              >
               {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
@@ -95,7 +98,8 @@ export default function Categories() {
 
               {/* Hover Border Effect */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-indigo-500 rounded-2xl transition-colors duration-300" />
-            </motion.a>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

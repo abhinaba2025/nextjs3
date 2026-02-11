@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNex Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #6366F1;
+      --accent: #F59E0B;
+      --dark: #0F172A;
+      --light: #F8FAFC;
+      --gray: #64748B;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    header .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    header .logo-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    header .version {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 5px 15px;
+      border-radius: 20px;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      border-bottom: 1px solid #E2E8F0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      padding: 15px 0;
+      overflow-x: auto;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+    
+    /* Main Content */
+    main {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        display: none;
+      }
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+    }
+    
+    .sidebar h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+    }
+    
+    .sidebar li {
+      margin-bottom: 8px;
+    }
+    
+    .sidebar a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 0.95rem;
+      display: block;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Content */
+    .content {
+      min-width: 0;
+    }
+    
+    .content section {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    
+    .content h3 {
+      font-size: 1.3rem;
+      margin: 25px 0 15px;
+      color: var(--primary);
+    }
+    
+    .content h4 {
+      font-size: 1.1rem;
+      margin: 20px 0 10px;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+      color: var(--gray);
+    }
+    
+    .content ul, .content ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    
+    .content li {
+      margin-bottom: 8px;
+      color: var(--gray);
+    }
+    
+    /* Code Blocks */
+    pre {
+      background: var(--dark);
+      color: #E2E8F0;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    code {
+      background: #E2E8F0;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    
+    /* Alert Boxes */
+    .alert {
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    
+    .alert-info {
+      background: #EFF6FF;
+      border-left: 4px solid #3B82F6;
+    }
+    
+    .alert-warning {
+      background: #FFFBEB;
+      border-left: 4px solid #F59E0B;
+    }
+    
+    .alert-success {
+      background: #ECFDF5;
+      border-left: 4px solid #10B981;
+    }
+    
+    .alert-icon {
+      font-size: 1.5rem;
+    }
+    
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    
+    th {
+      background: var(--light);
+      font-weight: 600;
+    }
+    
+    /* File Tree */
+    .file-tree {
+      background: var(--dark);
+      color: #E2E8F0;
+      padding: 25px;
+      border-radius: 12px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    
+    .file-tree .folder {
+      color: #FBBF24;
+    }
+    
+    .file-tree .file {
+      color: #60A5FA;
+    }
+    
+    /* Feature Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+    
+    .feature-card {
+      background: var(--light);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .feature-card .icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 1.5rem;
+    }
+    
+    .feature-card h4 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    .feature-card p {
+      font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    footer p {
+      opacity: 0.7;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <span style="font-size: 1.8rem; font-weight: 700;">ShopNex</span>
+      </div>
+      <h1>Documentation</h1>
+      <p>Everything you need to get started with ShopNex eCommerce Template</p>
+      <span class="version">Version 1.0.0</span>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#getting-started" class="active">Getting Started</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#folder-structure">Folder Structure</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#getting-started" class="active">Getting Started</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#folder-structure">Folder Structure</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#pages">Pages</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#theming">Theming</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+        <li><a href="#api-integration">API Integration</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Getting Started -->
+      <section id="getting-started">
+        <h2>🚀 Getting Started</h2>
+        <p>Thank you for purchasing ShopNex - the modern Jamstack eCommerce template! This documentation will help you get started quickly.</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h4>Lightning Fast</h4>
+            <p>Built with React and Vite for optimal performance</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h4>Modern Design</h4>
+            <p>Clean, responsive UI with smooth animations</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🌙</div>
+            <h4>Dark Mode</h4>
+            <p>Built-in light/dark theme toggle</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📱</div>
+            <h4>Fully Responsive</h4>
+            <p>Works perfectly on all devices</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Requirements -->
+      <section id="requirements">
+        <h2>📋 Requirements</h2>
+        <p>Before installing ShopNex, make sure you have the following installed:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Software</th>
+              <th>Minimum Version</th>
+              <th>Recommended</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Node.js</td>
+              <td>18.x</td>
+              <td>20.x or higher</td>
+            </tr>
+            <tr>
+              <td>npm</td>
+              <td>9.x</td>
+              <td>10.x or higher</td>
+            </tr>
+            <tr>
+              <td>Git</td>
+              <td>2.x</td>
+              <td>Latest</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="alert alert-info">
+          <span class="alert-icon">💡</span>
+          <div>
+            <strong>Pro Tip:</strong> We recommend using <a href="https://github.com/nvm-sh/nvm">nvm</a> to manage your Node.js versions.
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation -->
+      <section id="installation">
+        <h2>⚙️ Installation</h2>
+        <p>Follow these steps to install and run ShopNex locally:</p>
+        
+        <h3>Step 1: Extract Files</h3>
+        <p>Extract the downloaded zip file to your desired location.</p>
+        
+        <h3>Step 2: Install Dependencies</h3>
+        <p>Open your terminal, navigate to the project folder, and run:</p>
+        <pre><code>cd shopnex
+npm install</code></pre>
+        
+        <h3>Step 3: Start Development Server</h3>
+        <p>Run the development server:</p>
+        <pre><code>npm run dev</code></pre>
+        <p>The application will be available at <code>http://localhost:5173</code></p>
+        
+        <h3>Step 4: Build for Production</h3>
+        <p>To create a production build:</p>
+        <pre><code>npm run build</code></pre>
+        <p>The build output will be in the <code>dist</code> folder.</p>
+        
+        <div class="alert alert-success">
+          <span class="alert-icon">✅</span>
+          <div>
+            <strong>Success!</strong> Your ShopNex store is now running locally.
+          </div>
+        </div>
+      </section>
+
+      <!-- Folder Structure -->
+      <section id="folder-structure">
+        <h2>📁 Folder Structure</h2>
+        <p>Here's an overview of the project structure:</p>
+        
+        <div class="file-tree">
+<span class="folder">shopnex/</span>
+├── <span class="folder">public/</span>              # Static assets
+├── <span class="folder">src/</span>
+│   ├── <span class="folder">components/</span>      # Reusable components
+│   │   ├── <span class="folder">cart/</span>        # Cart components
+│   │   ├── <span class="folder">home/</span>        # Homepage sections
+│   │   ├── <span class="folder">layout/</span>      # Header, Footer
+│   │   ├── <span class="folder">product/</span>     # Product components
+│   │   └── <span class="folder">ui/</span>          # UI components (Button, Modal)
+│   ├── <span class="folder">context/</span>         # React Context providers
+│   │   ├── <span class="file">CartContext.tsx</span>
+│   │   ├── <span class="file">WishlistContext.tsx</span>
+│   │   └── <span class="file">ThemeContext.tsx</span>
+│   ├── <span class="folder">data/</span>            # Mock data
+│   │   └── <span class="file">products.ts</span>
+│   ├── <span class="folder">pages/</span>           # Page components
+│   ├── <span class="file">App.tsx</span>            # Main App component
+│   ├── <span class="file">main.tsx</span>           # Entry point
+│   └── <span class="file">index.css</span>          # Global styles
+├── <span class="folder">documentation/</span>       # Documentation files
+├── <span class="file">index.html</span>             # HTML template
+├── <span class="file">package.json</span>           # Dependencies
+├── <span class="file">vite.config.ts</span>         # Vite configuration
+└── <span class="file">tailwind.config.js</span>    # Tailwind CSS config
+        </div>
+      </section>
+
+      <!-- Components -->
+      <section id="components">
+        <h2>🧩 Components</h2>
+        <p>ShopNex includes a variety of reusable components:</p>
+        
+        <h3>Layout Components</h3>
+        <ul>
+          <li><strong>Header</strong> - Sticky navigation with search, cart, and theme toggle</li>
+          <li><strong>Footer</strong> - Full footer with newsletter signup and links</li>
+        </ul>
+        
+        <h3>UI Components</h3>
+        <ul>
+          <li><strong>Button</strong> - Customizable button with variants (primary, secondary, outline)</li>
+          <li><strong>Modal</strong> - Animated modal dialog</li>
+        </ul>
+        
+        <h3>Product Components</h3>
+        <ul>
+          <li><strong>ProductCard</strong> - Product display card with hover effects</li>
+          <li><strong>ProductGallery</strong> - Image gallery with zoom functionality</li>
+          <li><strong>QuickView</strong> - Quick view modal for products</li>
+        </ul>
+        
+        <h3>Home Components</h3>
+        <ul>
+          <li><strong>Hero</strong> - Animated hero section with slideshow</li>
+          <li><strong>FeaturedProducts</strong> - Featured products with category tabs</li>
+          <li><strong>Categories</strong> - Category cards with hover animations</li>
+          <li><strong>Testimonials</strong> - Customer testimonials slider</li>
+          <li><strong>Newsletter</strong> - Email signup section</li>
+          <li><strong>Features</strong> - Features/benefits section</li>
+        </ul>
+      </section>
+
+      <!-- Pages -->
+      <section id="pages">
+        <h2>📄 Pages</h2>
+        <p>ShopNex includes the following pages:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Page</th>
+              <th>Route</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Home</td>
+              <td><code>/</code></td>
+              <td>Landing page with hero, products, and features</td>
+            </tr>
+            <tr>
+              <td>Shop</td>
+              <td><code>/shop</code></td>
+              <td>Product listing with filters and sorting</td>
+            </tr>
+            <tr>
+              <td>Product Detail</td>
+              <td><code>/product/:slug</code></td>
+              <td>Individual product page</td>
+            </tr>
+            <tr>
+              <td>Cart</td>
+              <td><code>/cart</code></td>
+              <td>Shopping cart page</td>
+            </tr>
+            <tr>
+              <td>Checkout</td>
+              <td><code>/checkout</code></td>
+              <td>Multi-step checkout process</td>
+            </tr>
+            <tr>
+              <td>Wishlist</td>
+              <td><code>/wishlist</code></td>
+              <td>User wishlist</td>
+            </tr>
+            <tr>
+              <td>About</td>
+              <td><code>/about</code></td>
+              <td>About us page</td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td><code>/contact</code></td>
+              <td>Contact form with FAQ</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Customization -->
+      <section id="customization">
+        <h2>🎨 Customization</h2>
+        
+        <h3>Colors</h3>
+        <p>Modify the color palette in <code>tailwind.config.js</code>:</p>
+        <pre><code>// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#4F46E5',    // Indigo
+        accent: '#F59E0B',     // Amber
+        dark: '#0F172A',       // Slate 900
+        light: '#F8FAFC',      // Slate 50
+      }
+    }
+  }
+}</code></pre>
+        
+        <h3>Typography</h3>
+        <p>The default font is Poppins. To change it, update <code>index.html</code> and <code>tailwind.config.js</code>.</p>
+        
+        <h3>Logo</h3>
+        <p>Replace the logo in <code>src/components/layout/Header.tsx</code>.</p>
+        
+        <h3>Products</h3>
+        <p>Edit product data in <code>src/data/products.ts</code>.</p>
+      </section>
+
+      <!-- Theming -->
+      <section id="theming">
+        <h2>🌙 Theming (Light/Dark Mode)</h2>
+        <p>ShopNex includes a built-in theme toggle. The theme preference is saved to localStorage.</p>
+        
+        <h3>How it works</h3>
+        <p>The <code>ThemeContext</code> manages the theme state. When toggled, it adds/removes the <code>dark</code> class on the HTML element.</p>
+        
+        <pre><code>// Using the theme hook
+import { useTheme } from '@/context/ThemeContext';
+
+function MyComponent() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    &lt;button onClick={toggleTheme}&gt;
+      {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+    &lt;/button&gt;
+  );
+}</code></pre>
+        
+        <div class="alert alert-info">
+          <span class="alert-icon">💡</span>
+          <div>
+            The default theme is <strong>Light Mode</strong>. Users can toggle between themes using the sun/moon icon in the header.
+          </div>
+        </div>
+      </section>
+
+      <!-- Deployment -->
+      <section id="deployment">
+        <h2>🚀 Deployment</h2>
+        
+        <h3>Deploy to Vercel</h3>
+        <p>The easiest way to deploy ShopNex is using Vercel:</p>
+        <ol>
+          <li>Push your code to GitHub</li>
+          <li>Go to <a href="https://vercel.com">vercel.com</a></li>
+          <li>Import your repository</li>
+          <li>Click Deploy</li>
+        </ol>
+        
+        <h3>Deploy to Netlify</h3>
+        <ol>
+          <li>Build the project: <code>npm run build</code></li>
+          <li>Drag the <code>dist</code> folder to Netlify</li>
+        </ol>
+        
+        <h3>Static Hosting</h3>
+        <p>Upload the contents of the <code>dist</code> folder to any static hosting provider.</p>
+        
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div>
+            <strong>SPA Routing:</strong> For client-side routing to work, configure your hosting to redirect all requests to <code>index.html</code>.
+          </div>
+        </div>
+      </section>
+
+      <!-- API Integration -->
+      <section id="api-integration">
+        <h2>🔌 API Integration</h2>
+        <p>ShopNex is designed to work with any headless CMS or eCommerce backend.</p>
+        
+        <h3>Recommended Backends</h3>
+        <ul>
+          <li><strong>Shopify Storefront API</strong> - Full eCommerce solution</li>
+          <li><strong>Saleor</strong> - Open-source GraphQL eCommerce</li>
+          <li><strong>Medusa</strong> - Open-source headless commerce</li>
+          <li><strong>Strapi</strong> - Headless CMS</li>
+          <li><strong>Sanity</strong> - Real-time content platform</li>
+        </ul>
+        
+        <h3>Example: Fetching Products</h3>
+        <pre><code>// src/services/api.ts
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: process.env.VITE_API_URL,
+});
+
+export async function getProducts() {
+  const { data } = await api.get('/products');
+  return data;
+}
+
+export async function getProduct(slug: string) {
+  const { data } = await api.get(`/products/${slug}`);
+  return data;
+}</code></pre>
+      </section>
+
+      <!-- Support -->
+      <section id="support">
+        <h2>💬 Support</h2>
+        <p>Need help? We're here for you!</p>
+        
+        <h3>Documentation</h3>
+        <p>Check this documentation for answers to common questions.</p>
+        
+        <h3>Email Support</h3>
+        <p>Contact us at <a href="mailto:support@shopnex.com">support@shopnex.com</a></p>
+        
+        <h3>Updates</h3>
+        <p>We provide free lifetime updates for all buyers.</p>
+        
+        <div class="alert alert-success">
+          <span class="alert-icon">❤️</span>
+          <div>
+            <strong>Thank you</strong> for choosing ShopNex! We appreciate your purchase.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 ShopNex. All rights reserved.</p>
+      <p style="margin-top: 10px;">
+        Made with ❤️ by <a href="#">ShopNex Team</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
