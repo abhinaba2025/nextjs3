@@ -19,7 +19,7 @@ export default function HomePage2() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-sm uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
-                New Collection 2024
+                New Collection 2026
               </span>
               <h1 className="mt-4 text-6xl lg:text-8xl font-light text-gray-900 dark:text-white leading-none">
                 Less is

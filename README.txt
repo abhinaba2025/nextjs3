@@ -11,7 +11,7 @@
      
      Lightning-fast headless eCommerce built with React & Jamstack
      
-     Version 2.0.0 | © 2025
+     Version 2.0.0 | © 2026
 
 ================================================================================
 
@@ -250,7 +250,7 @@ ECOMMERCE PAGES (4):
 
 BLOG SECTION (9):
   /blog                     Blog Listing
-  /blog/top-10-fashion-trends-2024
+  /blog/top-10-fashion-trends-2026
   /blog/ultimate-guide-smart-home
   /blog/sustainable-living-eco-friendly
   /blog/home-workout-equipment
@@ -264,7 +264,7 @@ MAGAZINE SECTION (9):
   /magazine/future-sustainable-fashion
   /magazine/ai-revolution-everyday-life
   /magazine/architecture-of-tomorrow
-  /magazine/wellness-revolution-2024
+  /magazine/wellness-revolution-2026
   /magazine/rise-remote-work-culture
   /magazine/culinary-travel-world-flavors
   /magazine/evolution-street-style
@@ -532,7 +532,7 @@ experience. If you love ShopNex, please leave a rating!
 
 ================================================================================
 
-© 2025 ShopNex. All rights reserved.
+© 2026 ShopNex. All rights reserved.
 Made with ❤️ by the ShopNex Team
 
 ================================================================================

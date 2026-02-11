@@ -172,7 +172,7 @@ const PrivacyPolicyPage = () => {
               Your privacy is important to us. This policy explains how we collect, use, and protect your information.
             </p>
             <p className="text-white/60 mt-4">
-              Last updated: January 1, 2024
+              Last updated: January 1, 2026
             </p>
           </motion.div>
         </div>

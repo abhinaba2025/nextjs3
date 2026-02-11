@@ -20,17 +20,17 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    slug: 'top-10-fashion-trends-2024',
-    title: 'Top 10 Fashion Trends to Watch in 2024',
-    excerpt: 'Discover the hottest fashion trends that will dominate the runways and streets in 2024. From sustainable fashion to bold colors.',
+    slug: 'top-10-fashion-trends-2026',
+    title: 'Top 10 Fashion Trends to Watch in 2026',
+    excerpt: 'Discover the hottest fashion trends that will dominate the runways and streets in 2026. From sustainable fashion to bold colors.',
     content: `
-      <p>Fashion is constantly evolving, and 2024 promises to be an exciting year for style enthusiasts. Here are the top 10 trends you need to know about.</p>
+      <p>Fashion is constantly evolving, and 2026 promises to be an exciting year for style enthusiasts. Here are the top 10 trends you need to know about.</p>
       
       <h2>1. Sustainable Fashion Takes Center Stage</h2>
       <p>Eco-conscious fashion is no longer just a trend—it's becoming the standard. Brands are increasingly focusing on sustainable materials, ethical production, and circular fashion models. Look for pieces made from recycled materials, organic cotton, and innovative fabrics like mushroom leather.</p>
       
       <h2>2. Bold, Vibrant Colors</h2>
-      <p>Say goodbye to muted tones! 2024 is all about bold, eye-catching colors. Electric blue, hot pink, and sunny yellow are dominating collections. Don't be afraid to mix and match these vibrant hues for maximum impact.</p>
+      <p>Say goodbye to muted tones! 2026 is all about bold, eye-catching colors. Electric blue, hot pink, and sunny yellow are dominating collections. Don't be afraid to mix and match these vibrant hues for maximum impact.</p>
       
       <h2>3. Oversized Silhouettes</h2>
       <p>Comfort meets style with oversized blazers, coats, and shirts. This relaxed approach to dressing offers both comfort and sophistication. Pair an oversized blazer with fitted pants for a balanced look.</p>
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
       <p>Fashion is becoming increasingly inclusive, with more brands offering gender-neutral collections. Expect to see more unisex silhouettes and designs that transcend traditional gender norms.</p>
       
       <h2>Conclusion</h2>
-      <p>2024 is shaping up to be an exciting year for fashion, with trends that cater to every style preference. Whether you prefer bold statements or quiet elegance, there's something for everyone. Remember, the best trend is wearing what makes you feel confident and authentic.</p>
+      <p>2026 is shaping up to be an exciting year for fashion, with trends that cater to every style preference. Whether you prefer bold statements or quiet elegance, there's something for everyone. Remember, the best trend is wearing what makes you feel confident and authentic.</p>
     `,
     image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1200&h=800&fit=crop',
     category: 'Fashion',
@@ -66,15 +66,15 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
       role: 'Fashion Editor'
     },
-    date: '2024-01-15',
+    date: '2026-01-15',
     readTime: '8 min read',
-    tags: ['Fashion', 'Trends', '2024', 'Style Guide'],
+    tags: ['Fashion', 'Trends', '2026', 'Style Guide'],
     featured: true
   },
   {
     id: 2,
     slug: 'ultimate-guide-smart-home-devices',
-    title: 'The Ultimate Guide to Smart Home Devices in 2024',
+    title: 'The Ultimate Guide to Smart Home Devices in 2026',
     excerpt: 'Transform your living space with the latest smart home technology. From voice assistants to automated lighting systems.',
     content: `
       <p>Smart home technology has evolved dramatically, making our lives more convenient, efficient, and connected than ever before. This comprehensive guide will help you navigate the world of smart home devices.</p>
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
       role: 'Tech Writer'
     },
-    date: '2024-01-12',
+    date: '2026-01-12',
     readTime: '10 min read',
     tags: ['Technology', 'Smart Home', 'Gadgets', 'IoT'],
     featured: true
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
       role: 'Sustainability Expert'
     },
-    date: '2024-01-10',
+    date: '2026-01-10',
     readTime: '7 min read',
     tags: ['Sustainability', 'Eco-Friendly', 'Home', 'Lifestyle'],
     featured: false
@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
       role: 'Fitness Coach'
     },
-    date: '2024-01-08',
+    date: '2026-01-08',
     readTime: '9 min read',
     tags: ['Fitness', 'Home Gym', 'Workout', 'Equipment'],
     featured: true
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
       role: 'Professional Photographer'
     },
-    date: '2024-01-05',
+    date: '2026-01-05',
     readTime: '11 min read',
     tags: ['Photography', 'Tips', 'Beginners', 'Camera'],
     featured: false
@@ -366,7 +366,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
       role: 'Fashion Editor'
     },
-    date: '2024-01-03',
+    date: '2026-01-03',
     readTime: '8 min read',
     tags: ['Fashion', 'Minimalism', 'Capsule Wardrobe', 'Style'],
     featured: false
@@ -432,7 +432,7 @@ export const blogPosts: BlogPost[] = [
       avatar: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop',
       role: 'Gaming Expert'
     },
-    date: '2024-01-01',
+    date: '2026-01-01',
     readTime: '10 min read',
     tags: ['Gaming', 'Setup', 'PC Gaming', 'Accessories'],
     featured: false

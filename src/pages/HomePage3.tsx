@@ -18,7 +18,7 @@ export default function HomePage3() {
     },
     {
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600',
-      subtitle: 'Fall/Winter 2024',
+      subtitle: 'Fall/Winter 2026',
       title: 'Timeless Beauty',
       desc: 'Premium fashion essentials'
     },
