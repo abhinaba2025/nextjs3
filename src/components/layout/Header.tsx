@@ -12,6 +12,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
+  const [isHelpDropdownOpen, setIsHelpDropdownOpen] = useState(false);
   const { totalItems, toggleCart } = useCart();
   const { items: wishlistItems } = useWishlist();
   const { theme, toggleTheme } = useTheme();
@@ -53,8 +54,18 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Magazine', path: '/magazine' },
+    { name: 'Demos', path: '/demos' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  const helpLinks = [
+    { name: 'FAQ', path: '/faq', icon: '❓', description: 'Frequently asked questions' },
+    { name: 'Shipping & Returns', path: '/shipping-returns', icon: '📦', description: 'Delivery and return info' },
+    { name: 'Privacy Policy', path: '/privacy-policy', icon: '🔒', description: 'How we protect your data' },
+    { name: 'Terms of Service', path: '/terms-of-service', icon: '📄', description: 'Our terms and conditions' },
   ];
 
   return (
@@ -171,6 +182,66 @@ export function Header() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                           </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Help Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsHelpDropdownOpen(true)}
+                onMouseLeave={() => setIsHelpDropdownOpen(false)}
+              >
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    ['/faq', '/shipping-returns', '/privacy-policy', '/terms-of-service'].includes(location.pathname)
+                      ? 'text-indigo-600'
+                      : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
+                  }`}
+                >
+                  Help
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isHelpDropdownOpen ? 'rotate-180' : ''}`} />
+                </motion.button>
+
+                <AnimatePresence>
+                  {isHelpDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                    >
+                      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-4 min-w-[320px]">
+                        <div className="grid gap-2">
+                          {helpLinks.map((link, index) => (
+                            <Link
+                              key={link.path}
+                              to={link.path}
+                              onClick={() => setIsHelpDropdownOpen(false)}
+                            >
+                              <motion.div
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                              >
+                                <span className="text-2xl">{link.icon}</span>
+                                <div>
+                                  <p className="font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
+                                    {link.name}
+                                  </p>
+                                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                                    {link.description}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </motion.div>
@@ -317,6 +388,39 @@ export function Header() {
 
                 <div className="pt-2 border-t dark:border-slate-800">
                   <Link
+                    to="/blog"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                      location.pathname === '/blog' || location.pathname.startsWith('/blog/')
+                        ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                        : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    📝 Blog
+                  </Link>
+                  <Link
+                    to="/magazine"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                      location.pathname === '/magazine' || location.pathname.startsWith('/magazine/')
+                        ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                        : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    📰 Magazine
+                  </Link>
+                  <Link
+                    to="/demos"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                      location.pathname === '/demos'
+                        ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                        : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                    }`}
+                  >
+                    ✨ Demos
+                  </Link>
+                  <Link
                     to="/about"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
@@ -338,6 +442,28 @@ export function Header() {
                   >
                     Contact
                   </Link>
+                </div>
+
+                {/* Help Section */}
+                <div className="space-y-1 pt-2 border-t dark:border-slate-800">
+                  <p className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    Help & Support
+                  </p>
+                  {helpLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                        location.pathname === link.path
+                          ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                          : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                      }`}
+                    >
+                      <span className="text-lg">{link.icon}</span>
+                      <span>{link.name}</span>
+                    </Link>
+                  ))}
                 </div>
               </nav>
             </motion.div>

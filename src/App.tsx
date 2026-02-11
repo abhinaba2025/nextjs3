@@ -6,6 +6,8 @@ import { WishlistProvider } from './context/WishlistContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
+
+// Main Pages
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import AllProductsPage from './pages/AllProductsPage';
@@ -19,6 +21,30 @@ import WishlistPage from './pages/WishlistPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import DemosPage from './pages/DemosPage';
+import ShippingReturnsPage from './pages/ShippingReturnsPage';
+import FAQPage from './pages/FAQPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+
+// Blog & Magazine
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
+import MagazinePage from './pages/MagazinePage';
+import MagazineArticlePage from './pages/MagazineArticlePage';
+
+// Homepage Demos
+import HomePage2 from './pages/HomePage2';
+import HomePage3 from './pages/HomePage3';
+import HomePage4 from './pages/HomePage4';
+import HomePage5 from './pages/HomePage5';
+import HomePage6 from './pages/HomePage6';
+import HomePage7 from './pages/HomePage7';
+import HomePage8 from './pages/HomePage8';
+import HomePage9 from './pages/HomePage9';
+import HomePage10 from './pages/HomePage10';
+import HomePage11 from './pages/HomePage11';
+import HomePage12 from './pages/HomePage12';
 
 function App() {
   return (
@@ -31,6 +57,7 @@ function App() {
               <CartDrawer />
               <AnimatePresence mode="wait">
                 <Routes>
+                  {/* Main Pages */}
                   <Route path="/" element={<HomePage />} />
                   <Route path="/shop" element={<ShopPage />} />
                   <Route path="/shop/all" element={<AllProductsPage />} />
@@ -43,6 +70,31 @@ function App() {
                   <Route path="/wishlist" element={<WishlistPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/demos" element={<DemosPage />} />
+                  <Route path="/shipping-returns" element={<ShippingReturnsPage />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                  <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+                  
+                  {/* Blog & Magazine */}
+                  <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPostPage />} />
+                  <Route path="/magazine" element={<MagazinePage />} />
+                  <Route path="/magazine/:slug" element={<MagazineArticlePage />} />
+                  
+                  {/* Homepage Demos */}
+                  <Route path="/demo/minimal" element={<HomePage2 />} />
+                  <Route path="/demo/luxury" element={<HomePage3 />} />
+                  <Route path="/demo/tech" element={<HomePage4 />} />
+                  <Route path="/demo/marketplace" element={<HomePage5 />} />
+                  <Route path="/demo/dark-premium" element={<HomePage6 />} />
+                  <Route path="/demo/colorful" element={<HomePage7 />} />
+                  <Route path="/demo/editorial" element={<HomePage8 />} />
+                  <Route path="/demo/split" element={<HomePage9 />} />
+                  <Route path="/demo/video" element={<HomePage10 />} />
+                  <Route path="/demo/masonry" element={<HomePage11 />} />
+                  <Route path="/demo/app" element={<HomePage12 />} />
+                  
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </AnimatePresence>

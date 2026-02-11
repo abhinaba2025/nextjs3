@@ -71,6 +71,8 @@ export function Footer() {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'Shop', path: '/shop' },
+                { name: 'Blog', path: '/blog' },
+                { name: 'Magazine', path: '/magazine' },
                 { name: 'About Us', path: '/about' },
                 { name: 'Contact', path: '/contact' },
               ].map(link => (
@@ -88,9 +90,12 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-white mb-6">Customer Service</h4>
             <ul className="space-y-4">
               {[
+                { name: 'FAQ', path: '/faq' },
+                { name: 'Shipping & Returns', path: '/shipping-returns' },
                 { name: 'My Cart', path: '/cart' },
                 { name: 'Wishlist', path: '/wishlist' },
-                { name: 'Checkout', path: '/checkout' },
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms of Service', path: '/terms-of-service' },
               ].map(link => (
                 <li key={link.path}>
                   <Link to={link.path} className="text-slate-400 hover:text-indigo-400 transition-colors">
