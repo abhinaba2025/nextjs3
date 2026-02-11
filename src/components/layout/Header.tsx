@@ -11,6 +11,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isHelpDropdownOpen, setIsHelpDropdownOpen] = useState(false);
   const { totalItems, toggleCart } = useCart();
@@ -24,6 +25,21 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const homeDemos = [
+    { name: 'Default Home', path: '/', icon: '🏠', description: 'Modern animated homepage' },
+    { name: 'Minimal Clean', path: '/demo/minimal', icon: '✨', description: 'Clean minimalist design' },
+    { name: 'Luxury Fashion', path: '/demo/luxury', icon: '💎', description: 'Dark luxury with gold accents' },
+    { name: 'Tech Futuristic', path: '/demo/tech', icon: '🚀', description: 'Futuristic with gradients' },
+    { name: 'Marketplace', path: '/demo/marketplace', icon: '🏪', description: 'Multi-vendor with flash deals' },
+    { name: 'Dark Premium', path: '/demo/dark-premium', icon: '🌙', description: 'Premium dark with emerald' },
+    { name: 'Colorful Playful', path: '/demo/colorful', icon: '🎨', description: 'Fun and colorful design' },
+    { name: 'Magazine Editorial', path: '/demo/editorial', icon: '📰', description: 'Serif typography editorial' },
+    { name: 'Split Screen', path: '/demo/split', icon: '◧', description: 'Bold split-screen layout' },
+    { name: 'Video Background', path: '/demo/video', icon: '🎬', description: 'Cinematic video style' },
+    { name: 'Masonry Grid', path: '/demo/masonry', icon: '🧱', description: 'Pinterest-style masonry' },
+    { name: 'Modern App', path: '/demo/app', icon: '📱', description: 'App-style with cards' },
+  ];
 
   const shopCategories = [
     { 
@@ -53,10 +69,8 @@ export function Header() {
   ];
 
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
     { name: 'Magazine', path: '/magazine' },
-    { name: 'Demos', path: '/demos' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -102,20 +116,83 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.slice(0, 1).map(link => (
-                <Link key={link.path} to={link.path}>
-                  <motion.span
-                    whileHover={{ y: -2 }}
-                    className={`text-sm font-medium transition-colors ${
-                      location.pathname === link.path
-                        ? 'text-indigo-600'
-                        : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
-                    }`}
-                  >
-                    {link.name}
-                  </motion.span>
-                </Link>
-              ))}
+              {/* Home Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsHomeDropdownOpen(true)}
+                onMouseLeave={() => setIsHomeDropdownOpen(false)}
+              >
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    location.pathname === '/' || location.pathname.startsWith('/demo')
+                      ? 'text-indigo-600'
+                      : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
+                  }`}
+                >
+                  Home
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isHomeDropdownOpen ? 'rotate-180' : ''}`} />
+                </motion.button>
+
+                <AnimatePresence>
+                  {isHomeDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                    >
+                      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-4 min-w-[600px]">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Homepage Demos</h3>
+                          <Link
+                            to="/demos"
+                            onClick={() => setIsHomeDropdownOpen(false)}
+                            className="text-xs text-indigo-600 hover:text-indigo-700 font-medium"
+                          >
+                            View All →
+                          </Link>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2">
+                          {homeDemos.map((demo, index) => (
+                            <Link
+                              key={demo.path}
+                              to={demo.path}
+                              onClick={() => setIsHomeDropdownOpen(false)}
+                            >
+                              <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.03 }}
+                                className={`flex items-center gap-2 p-2.5 rounded-xl transition-colors group ${
+                                  location.pathname === demo.path
+                                    ? 'bg-indigo-50 dark:bg-indigo-950'
+                                    : 'hover:bg-slate-50 dark:hover:bg-slate-700'
+                                }`}
+                              >
+                                <span className="text-xl">{demo.icon}</span>
+                                <div className="flex-1 min-w-0">
+                                  <p className={`text-sm font-medium truncate transition-colors ${
+                                    location.pathname === demo.path
+                                      ? 'text-indigo-600 dark:text-indigo-400'
+                                      : 'text-slate-900 dark:text-white group-hover:text-indigo-600'
+                                  }`}>
+                                    {demo.name}
+                                  </p>
+                                  <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                                    {demo.description}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               {/* Shop Dropdown */}
               <div 
@@ -249,12 +326,12 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              {navLinks.slice(1).map(link => (
+              {navLinks.map(link => (
                 <Link key={link.path} to={link.path}>
                   <motion.span
                     whileHover={{ y: -2 }}
                     className={`text-sm font-medium transition-colors ${
-                      location.pathname === link.path
+                      location.pathname === link.path || location.pathname.startsWith(link.path + '/')
                         ? 'text-indigo-600'
                         : 'text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400'
                     }`}
@@ -351,18 +428,30 @@ export function Header() {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-white dark:bg-slate-900 border-t dark:border-slate-800"
             >
-              <nav className="px-4 py-4 space-y-2">
-                <Link
-                  to="/"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
-                    location.pathname === '/'
-                      ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
-                      : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
-                  }`}
-                >
-                  Home
-                </Link>
+              <nav className="px-4 py-4 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
+                {/* Home Demos Section */}
+                <div className="space-y-1">
+                  <p className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    Homepage Demos
+                  </p>
+                  <div className="grid grid-cols-2 gap-1">
+                    {homeDemos.map((demo) => (
+                      <Link
+                        key={demo.path}
+                        to={demo.path}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`flex items-center gap-2 w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                          location.pathname === demo.path
+                            ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
+                            : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
+                        }`}
+                      >
+                        <span className="text-base">{demo.icon}</span>
+                        <span className="text-sm truncate">{demo.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
 
                 {/* Shop Section */}
                 <div className="space-y-1">
@@ -386,61 +475,64 @@ export function Header() {
                   ))}
                 </div>
 
-                <div className="pt-2 border-t dark:border-slate-800">
+                <div className="pt-2 border-t dark:border-slate-800 space-y-1">
+                  <p className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    Pages
+                  </p>
                   <Link
                     to="/blog"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === '/blog' || location.pathname.startsWith('/blog/')
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    📝 Blog
+                    <span className="text-lg">📝</span> Blog
                   </Link>
                   <Link
                     to="/magazine"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === '/magazine' || location.pathname.startsWith('/magazine/')
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    📰 Magazine
+                    <span className="text-lg">📰</span> Magazine
                   </Link>
                   <Link
                     to="/demos"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === '/demos'
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    ✨ Demos
+                    <span className="text-lg">✨</span> All Demos
                   </Link>
                   <Link
                     to="/about"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === '/about'
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    About
+                    <span className="text-lg">ℹ️</span> About
                   </Link>
                   <Link
                     to="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-lg transition-colors ${
                       location.pathname === '/contact'
                         ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400'
                         : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                     }`}
                   >
-                    Contact
+                    <span className="text-lg">📧</span> Contact
                   </Link>
                 </div>
 

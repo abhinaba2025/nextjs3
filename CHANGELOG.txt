@@ -1,143 +1,296 @@
 ================================================================================
-                         SHOPNEX CHANGELOG
-                    Version History & Updates
+
+     ⚡ SHOPNEX – CHANGELOG
+     Complete Version History & Updates
+
+================================================================================
+     https://shopnex.com | support@shopnex.com
 ================================================================================
 
 
+
 ================================================================================
-VERSION 1.0.0 - Initial Release
-Release Date: January 2024
+VERSION 2.0.0 – Major Feature Update
+Release Date: January 2025
+================================================================================
+
+🎉 MAJOR UPDATE – 12 Homepage Demos, Blog, Magazine, and More!
+
+This release transforms ShopNex into a comprehensive eCommerce template with
+12 unique homepage demos, full blog & magazine sections, shop category pages,
+legal/utility pages, and improved dark mode support.
+
+--------------------------------------------------------------------------------
+🏠 NEW: 12 HOMEPAGE DEMOS
+--------------------------------------------------------------------------------
+
+  1. Default Home         /                  Full-featured modern layout
+  2. Minimal Clean        /demo/minimal      Whitespace-focused minimalist
+  3. Luxury Fashion       /demo/luxury       Dark luxury with gold accents
+  4. Tech Futuristic      /demo/tech         Gradient-rich futuristic
+  5. Marketplace          /demo/marketplace  Multi-vendor with flash deals
+  6. Dark Premium         /demo/dark-premium Premium dark with emerald accents
+  7. Colorful Playful     /demo/colorful     Fun, bright, and playful
+  8. Magazine Editorial   /demo/editorial    Serif typography editorial
+  9. Split Screen         /demo/split        Bold split-screen layout
+  10. Video Background    /demo/video        Cinematic video style
+  11. Masonry Grid        /demo/masonry      Pinterest-style masonry layout
+  12. Modern App          /demo/app          App-style with cards
+
+• Added Demos Showcase page (/demos)
+• Added Home mega dropdown in header with all 12 demos
+• Each demo has unique visual style, color scheme, and layout
+
+--------------------------------------------------------------------------------
+📰 NEW: BLOG SECTION (8 Posts)
+--------------------------------------------------------------------------------
+
+Blog Listing page with search, category filtering, and pagination.
+8 individual blog post pages with full content:
+
+  1. Top 10 Fashion Trends to Watch in 2024      (Fashion)
+  2. The Ultimate Guide to Smart Home Devices     (Technology)
+  3. Sustainable Living: Best Eco-Friendly Products (Lifestyle)
+  4. Home Workout Equipment Essentials            (Fitness)
+  5. Photography Tips for Beginners               (Photography)
+  6. Building a Minimalist Wardrobe               (Fashion)
+  7. The Ultimate Gaming Setup Guide              (Gaming)
+  8. Coffee Brewing Methods Compared              (Lifestyle)
+
+Features:
+  • Category filter tabs
+  • Search functionality
+  • Author profiles with avatars
+  • Social share buttons (Facebook, Twitter, LinkedIn)
+  • Like, Comment, Bookmark actions
+  • Related posts section
+  • Newsletter CTA
+
+--------------------------------------------------------------------------------
+📖 NEW: MAGAZINE SECTION (8 Articles)
+--------------------------------------------------------------------------------
+
+Magazine listing page with editorial-style layout and premium typography.
+8 individual magazine article pages:
+
+  1. The Future of Sustainable Fashion            (Fashion)
+  2. The AI Revolution in Everyday Life           (Technology)
+  3. The Architecture of Tomorrow                 (Design)
+  4. The Wellness Revolution of 2024              (Wellness)
+  5. The Rise of Remote Work Culture              (Business)
+  6. Culinary Travel: A Journey Through Flavors   (Travel)
+  7. The Evolution of Street Style                (Fashion)
+  8. The Art of Interior Design                   (Design)
+
+Features:
+  • Premium editorial typography
+  • Reading progress bar
+  • Drop cap styling
+  • Blockquote styles
+  • Floating social share sidebar
+  • Author box with gold accent
+  • Scroll to top button
+  • Related articles section
+  • Previous issues archive
+
+--------------------------------------------------------------------------------
+🛍️ NEW: SHOP CATEGORY PAGES
+--------------------------------------------------------------------------------
+
+  • /shop/all          All Products page
+  • /shop/electronics  Electronics category page
+  • /shop/fashion      Fashion category page
+  • /shop/sports       Sports category page
+
+Each category page includes:
+  • Category hero banner with description
+  • Product grid with animations
+  • Sort by options (Name, Price, Rating)
+  • Grid/list toggle
+  • View all products link
+
+--------------------------------------------------------------------------------
+📄 NEW: UTILITY & LEGAL PAGES
+--------------------------------------------------------------------------------
+
+  • /shipping-returns   Shipping & Returns page
+    - 4 shipping option cards (Standard, Express, Next Day, International)
+    - Easy returns process (4-step visual guide)
+    - Eligible vs non-eligible items
+    - 30-day guarantee section
+
+  • /faq               FAQ page
+    - 6 categories (Orders, Products, Payment, Returns, Account, Privacy)
+    - 30 total FAQ items
+    - Accordion-style expand/collapse
+    - Real-time search across all categories
+    - Contact support CTA
+
+  • /privacy-policy    Privacy Policy page
+    - 8 comprehensive sections
+    - Sidebar navigation with scroll-to-section
+    - Professional legal layout
+
+  • /terms-of-service  Terms of Service page
+    - 12 comprehensive sections
+    - Important notice about arbitration
+    - Sticky sidebar navigation
+
+--------------------------------------------------------------------------------
+🔧 IMPROVEMENTS
+--------------------------------------------------------------------------------
+
+HEADER NAVIGATION:
+  • Added Home mega dropdown with all 12 demo links
+  • Added Help dropdown (Shipping, FAQ, Privacy, Terms)
+  • Added Blog and Magazine links
+  • Updated mobile menu with organized sections
+  • Chevron rotation animation on dropdowns
+
+FOOTER:
+  • Added Blog and Magazine links
+  • Added Shipping & Returns, FAQ, Privacy, Terms links
+  • Updated Customer Service section
+
+DARK/LIGHT THEME FIX:
+  • Fixed theme toggle not working properly
+  • Added @custom-variant for Tailwind v4 dark mode support
+  • Added CSS variables for light and dark themes
+  • Added smooth transitions for theme changes
+  • Added dark mode styles for forms, scrollbars, shadows
+  • Theme properly persists in localStorage
+  • Light mode is now the default
+
+PRODUCTS DATA:
+  • Added Sports category products (Sport Smartwatch, Yoga Mat Premium)
+  • Updated product images with Unsplash URLs
+  • Added more product features and descriptions
+
+BRANDING:
+  • Added custom SVG favicon with lightning bolt icon
+  • Updated page title with ⚡ emoji
+  • Added meta tags for SEO and Open Graph
+  • Added theme-color meta tag
+
+DOCUMENTATION:
+  • Complete rewrite of documentation/index.html
+  • Updated to cover all 35+ pages
+  • Added component documentation
+  • Added API integration guide
+  • Added deployment instructions
+
+--------------------------------------------------------------------------------
+📊 STATISTICS
+--------------------------------------------------------------------------------
+
+  Total Pages:           35+
+  Homepage Demos:        12
+  Blog Posts:            8
+  Magazine Articles:     8
+  Shop Category Pages:   4
+  Legal/Utility Pages:   6
+  Components:            50+
+  Total Routes:          40+
+
+
+================================================================================
+VERSION 1.0.0 – Initial Release
+Release Date: December 2024
 ================================================================================
 
 🎉 INITIAL RELEASE
 
-This is the first public release of ShopNex - Modern Jamstack eCommerce Template.
+First public release of ShopNex – Modern Jamstack eCommerce Template.
 
 --------------------------------------------------------------------------------
 ✨ FEATURES
 --------------------------------------------------------------------------------
 
-CORE FEATURES:
-• Modern React 18 with TypeScript
-• Vite 5 for lightning-fast development
-• Tailwind CSS for styling
-• Framer Motion animations
-• React Router for navigation
-• React Hook Form for forms
+CORE:
+  • React 18 with TypeScript
+  • Vite 5 build tool
+  • Tailwind CSS styling
+  • Framer Motion animations
+  • React Router navigation
+  • React Hook Form
 
-ECOMMERCE FUNCTIONALITY:
-• Product listing with filters and sorting
-• Product detail pages with gallery
-• Shopping cart with add/remove/update
-• Wishlist functionality
-• Multi-step checkout process
-• Quick view modal
+ECOMMERCE:
+  • Product listing with filters and sorting
+  • Product detail pages with gallery and zoom
+  • Shopping cart with add/remove/update
+  • Wishlist functionality
+  • Multi-step checkout process
+  • Quick view modal for products
 
-HOMEPAGE SECTIONS:
-• Animated hero with slideshow
-• Featured products with category tabs
-• Category cards with hover effects
-• Customer testimonials
-• Newsletter signup
-• Features/benefits section
+HOMEPAGE:
+  • Animated hero with slideshow
+  • Featured products with category tabs
+  • Category cards with hover effects
+  • Customer testimonials
+  • Newsletter signup
+  • Features/benefits section
 
-LAYOUT COMPONENTS:
-• Sticky header with navigation
-• Search overlay
-• Cart drawer (slide from right)
-• Full footer with newsletter
-• Mobile-responsive menu
-
-UI COMPONENTS:
-• Customizable Button component
-• Modal dialog component
-• Product card with animations
-• Product gallery with zoom
+LAYOUT:
+  • Sticky header with search and navigation
+  • Cart drawer (slide from right with backdrop blur)
+  • Full footer with newsletter signup
+  • Mobile-responsive hamburger menu
 
 THEMING:
-• Light/Dark mode toggle
-• Persisted theme preference
-• Smooth theme transitions
+  • Light/Dark mode toggle
+  • Persisted theme preference
+  • Smooth theme transitions
 
-PAGES INCLUDED:
-• Home page
-• Shop page (grid layout with filters)
-• Product detail page
-• Cart page
-• Checkout page (multi-step)
-• Wishlist page
-• About page
-• Contact page with FAQ
-• 404 Not Found page
+PAGES (9):
+  • Home page
+  • Shop page
+  • Product detail page
+  • Cart page
+  • Checkout page
+  • Wishlist page
+  • About page
+  • Contact page
+  • 404 Not Found page
 
 DOCUMENTATION:
-• Full HTML documentation
-• Installation guide
-• Customization guide
-• Deployment guide
-• API integration guide
-
---------------------------------------------------------------------------------
-🛠 TECHNICAL DETAILS
---------------------------------------------------------------------------------
-
-Dependencies:
-• react: ^18.2.0
-• react-dom: ^18.2.0
-• react-router-dom: ^6.x
-• framer-motion: ^10.x
-• lucide-react: ^0.x
-• react-hook-form: ^7.x
-• swiper: ^11.x
-• axios: ^1.x
-
-Dev Dependencies:
-• typescript: ^5.x
-• vite: ^5.x
-• tailwindcss: ^3.x
-• @types/react: ^18.x
-• autoprefixer: ^10.x
-• postcss: ^8.x
-
-Browser Support:
-• Chrome (latest)
-• Firefox (latest)
-• Safari (latest)
-• Edge (latest)
-
---------------------------------------------------------------------------------
-📝 NOTES
---------------------------------------------------------------------------------
-
-• This template uses mock data for products
-• Payment gateway integration is not included (demo only)
-• Backend/API integration requires additional development
-
-================================================================================
+  • HTML documentation
+  • README.txt
+  • LICENSE.txt
+  • CHANGELOG.txt
 
 
 ================================================================================
-UPCOMING FEATURES (Planned)
+UPCOMING FEATURES (Roadmap)
 ================================================================================
 
-VERSION 1.1.0 (Planned)
------------------------
-• Blog section with articles
-• User account/profile pages
-• Order history page
-• Product reviews and ratings
-• Advanced product filtering
-• Product comparison feature
+VERSION 2.1.0 (Planned)
+------------------------
+  • User account/profile pages
+  • Order history page
+  • Product reviews and ratings system
+  • Advanced product filtering (price range, colors, sizes)
+  • Product comparison feature
+  • Search results page
+  • Coming Soon page
 
-VERSION 1.2.0 (Planned)
------------------------
-• PWA support
-• Push notifications
-• Offline mode
-• Performance optimizations
-• Additional page templates
+VERSION 2.2.0 (Planned)
+------------------------
+  • PWA support (Progressive Web App)
+  • Push notifications
+  • Offline mode
+  • Image optimization with WebP
+  • Performance optimizations
+  • RTL (Right-to-Left) support
+  • Multi-language (i18n) support
 
-================================================================================
+VERSION 3.0.0 (Planned)
+------------------------
+  • Next.js migration option
+  • Server-side rendering
+  • Headless CMS integration (Strapi/Sanity)
+  • Stripe payment integration
+  • Email notification system
+  • Admin dashboard template
 
 
 ================================================================================
@@ -146,29 +299,40 @@ UPDATE INSTRUCTIONS
 
 To update to a new version:
 
-1. Backup your current project
-2. Download the new version
-3. Compare your customizations with the new files
-4. Merge your customizations into the new version
-5. Test thoroughly before deploying
+  1. ⚠️ BACKUP your current project first!
+  2. Download the latest version
+  3. Compare your customizations with the new files
+  4. Merge your customizations into the new version
+  5. Run `npm install` to update dependencies
+  6. Test thoroughly before deploying
 
 Important: Always backup your work before updating!
 
+
 ================================================================================
+BROWSER SUPPORT
+================================================================================
+
+  • Google Chrome      (latest 2 versions)
+  • Mozilla Firefox    (latest 2 versions)
+  • Apple Safari       (latest 2 versions)
+  • Microsoft Edge     (latest 2 versions)
+  • Opera              (latest 2 versions)
 
 
 ================================================================================
 SUPPORT
 ================================================================================
 
-For questions or issues:
-• Email: support@shopnex.com
-• Documentation: documentation/index.html
+For questions, bugs, or feature requests:
 
-We provide 6 months of support and lifetime updates.
+  📧 Email:           support@shopnex.com
+  📖 Documentation:   documentation/index.html
+  🔄 Updates:         Lifetime free updates
+  🛡️ Support:         6 months included
 
 ================================================================================
 
-© 2024 ShopNex. All rights reserved.
+© 2025 ShopNex. All rights reserved.
 
 ================================================================================

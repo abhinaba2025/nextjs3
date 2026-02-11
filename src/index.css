@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Custom CSS Variables */
 :root {
   --color-primary: #4F46E5;
@@ -19,31 +22,79 @@ html {
 }
 
 /* Light Theme (Default) */
-html.light {
+html, html.light {
   --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
   --text-primary: #0F172A;
   --text-secondary: #64748B;
+  --text-tertiary: #94A3B8;
+  --border-color: #E2E8F0;
+}
+
+html.light body {
+  background-color: #F8FAFC;
+  color: #0F172A;
 }
 
 /* Dark Theme */
 html.dark {
   --bg-primary: #0F172A;
   --bg-secondary: #1E293B;
+  --bg-tertiary: #334155;
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
+  --border-color: #334155;
+}
+
+html.dark body {
+  background-color: #0F172A;
+  color: #F8FAFC;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
-/* Theme Transition */
-html.light body,
-html.dark body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Override Tailwind bg-white for dark mode */
+html.dark .bg-white {
+  background-color: #1E293B;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0F172A;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1E293B;
+}
+
+html.dark .text-slate-900 {
+  color: #F8FAFC;
+}
+
+html.dark .text-slate-800 {
+  color: #E2E8F0;
+}
+
+html.dark .text-slate-700 {
+  color: #CBD5E1;
+}
+
+html.dark .text-slate-600 {
+  color: #94A3B8;
+}
+
+html.dark .border-slate-100 {
+  border-color: #334155;
+}
+
+html.dark .border-slate-200 {
+  border-color: #334155;
 }
 
 /* Scrollbar Styling */
@@ -132,4 +183,41 @@ html.dark ::-webkit-scrollbar-track {
 
 html.dark .glass {
   background: rgba(0, 0, 0, 0.2);
+}
+
+/* Theme transition for all elements */
+*, *::before, *::after {
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Prevent layout shift during theme change */
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Dark mode form inputs */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748B;
+}
+
+/* Dark mode for cards and containers */
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.3);
 }

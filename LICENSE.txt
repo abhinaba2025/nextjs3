@@ -1,116 +1,277 @@
 ================================================================================
-                         SHOPNEX ECOMMERCE TEMPLATE LICENSE
+
+     ⚡ SHOPNEX – LICENSE AGREEMENT
+     
+     Standard License Agreement
+     Version 2.0.0
+
 ================================================================================
 
-                         STANDARD LICENSE AGREEMENT
-                              Version 1.0.0
+     Copyright (c) 2025 ShopNex
+     All Rights Reserved
 
 ================================================================================
 
-Copyright (c) 2024 ShopNex
 
---------------------------------------------------------------------------------
+This license agreement ("Agreement") is a legal agreement between you 
+("Licensee", "You") and ShopNex ("Licensor", "We", "Us") for the use of 
+ShopNex eCommerce Template ("Item", "Product", "Template").
+
+By purchasing, downloading, or using this Item, you agree to be bound by the 
+terms of this Agreement. If you do not agree to these terms, do not use the 
+Item.
+
+
+================================================================================
 1. LICENSE GRANT
---------------------------------------------------------------------------------
+================================================================================
 
-This license grants you, the purchaser, an ongoing, non-exclusive, worldwide 
-license to make use of the digital work (Item) you have purchased.
+Subject to the terms and conditions of this Agreement, the Licensor grants 
+you a non-exclusive, non-transferable, worldwide license to use the Item.
 
-You are licensed to use the Item to create one single End Product for yourself 
-or for one client (a "single application"), and the End Product can be 
-distributed for Free.
+STANDARD LICENSE:
+  You are licensed to use the Item to create ONE (1) single End Product for 
+  yourself or for ONE (1) client. The End Product may be distributed for free 
+  or as part of a larger project.
 
---------------------------------------------------------------------------------
+EXTENDED LICENSE:
+  For use in multiple projects, SaaS products, or products sold to multiple 
+  end users, an Extended License is required. Contact us for Extended License 
+  pricing.
+
+
+================================================================================
 2. PERMITTED USES
---------------------------------------------------------------------------------
+================================================================================
 
-You CAN:
+Under the Standard License, you MAY:
 
-✓ Use the Item to create one End Product (a single website or application)
-✓ Modify or manipulate the Item
-✓ Combine the Item with other works to create your End Product
-✓ Use the Item in a single website or application for yourself or one client
-✓ Make a backup copy of the Item
+  ✓ Use the Item to create one (1) End Product (website or web application)
+  ✓ Modify, adapt, and customize the Item's source code
+  ✓ Combine the Item with other works to create your End Product
+  ✓ Use the Item for personal or commercial purposes (single project)
+  ✓ Use the Item for a client project (single project)
+  ✓ Make a reasonable number of backup copies
+  ✓ Deploy the End Product to a production server
+  ✓ Use the Item in a presentation or portfolio (with attribution)
 
---------------------------------------------------------------------------------
+
+================================================================================
 3. RESTRICTIONS
---------------------------------------------------------------------------------
+================================================================================
 
-You CANNOT:
+Under any license, you MAY NOT:
 
-✗ Resell, redistribute, or provide the Item to others as a standalone product
-✗ Use the Item in more than one project without purchasing additional licenses
-✗ Use the Item in any application allowing end users to extract or redistribute
-  the Item's source files
-✗ Claim ownership of the Item or its original code
-✗ Use the Item in a product sold to multiple users (Extended License required)
-✗ Remove or alter any copyright notices
+  ✗ Resell, redistribute, sublicense, or give away the Item's source code
+  ✗ Share the Item with other developers, teams, or organizations
+  ✗ Upload the Item to any public repository (GitHub, GitLab, etc.)
+  ✗ Use the Item in more than one project without additional licenses
+  ✗ Create derivative templates or themes for resale based on the Item
+  ✗ Use the Item in any application that allows end users to extract,
+    download, or access the source files
+  ✗ Remove or alter any copyright notices, branding, or license information
+  ✗ Claim the Item as your own original work
+  ✗ Use the Item in any unlawful or prohibited manner
+  ✗ Use the Item to create a competing product or template
+  ✗ Transfer your license to another person or entity
 
---------------------------------------------------------------------------------
-4. SUPPORT & UPDATES
---------------------------------------------------------------------------------
 
-This license includes:
+================================================================================
+4. INTELLECTUAL PROPERTY
+================================================================================
 
-• 6 months of support from the author
-• Lifetime access to updates for this Item
-• Access to documentation and installation guides
+The Item is protected by copyright laws and international copyright treaties.
+The Licensor retains all intellectual property rights, title, and interest in 
+and to the Item, including all copies, modifications, and derivative works.
 
-Support includes:
-• Responding to questions or problems regarding the Item
-• Answering technical questions about the Item's features
-• Assistance with reported bugs and issues
+Your license grants you the right to USE the Item, not to own it.
 
-Support does not include:
-• Customization and installation services
-• Support for third-party plugins or modifications
-• Support for issues caused by modifications to the Item
+Third-party libraries included in the Item (React, Tailwind CSS, Framer 
+Motion, etc.) are subject to their own respective licenses (typically MIT).
 
---------------------------------------------------------------------------------
-5. EXTENDED LICENSE
---------------------------------------------------------------------------------
 
-If you need to use this Item in a product that will be sold to multiple users,
-you must purchase an Extended License. Contact us for pricing.
+================================================================================
+5. SUPPORT & UPDATES
+================================================================================
 
---------------------------------------------------------------------------------
-6. DISCLAIMER OF WARRANTY
---------------------------------------------------------------------------------
+SUPPORT:
+  This license includes SIX (6) months of technical support from the date 
+  of purchase. Support is provided via email at support@shopnex.com.
 
-THE ITEM IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE
-FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE ITEM OR THE
-USE OR OTHER DEALINGS IN THE ITEM.
+  Support INCLUDES:
+    • Responding to questions about the Item's features and functionality
+    • Answering technical questions about Item setup and configuration
+    • Assistance with reported bugs and defects
+    • Guidance on Item's built-in features
+    • Installation assistance (reasonable scope)
 
---------------------------------------------------------------------------------
+  Support DOES NOT include:
+    • Customization or modification services
+    • Support for third-party plugins, tools, or services
+    • Support for issues caused by your modifications
+    • Server configuration or hosting setup
+    • Custom design or development work
+    • Training or tutoring services
+
+  Extended support (additional 6 or 12 months) may be purchased separately.
+
+UPDATES:
+  This license includes LIFETIME access to updates for this Item.
+  Updates may include bug fixes, new features, performance improvements,
+  and compatibility updates.
+
+  We are not obligated to provide updates on any specific schedule.
+  Major version upgrades may be offered as separate purchases.
+
+
+================================================================================
+6. WARRANTIES & DISCLAIMERS
+================================================================================
+
+THE ITEM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO:
+
+  • WARRANTIES OF MERCHANTABILITY
+  • FITNESS FOR A PARTICULAR PURPOSE
+  • NON-INFRINGEMENT
+  • ACCURACY OR RELIABILITY OF RESULTS
+  • COMPATIBILITY WITH ANY PARTICULAR SYSTEM
+
+We do not warrant that:
+  • The Item will meet your specific requirements
+  • The Item will be uninterrupted, timely, secure, or error-free
+  • The results from use of the Item will be accurate or reliable
+  • Any errors in the Item will be corrected
+
+You assume all responsibility for selecting the Item to achieve your 
+intended results and for the use of the Item and its results.
+
+
+================================================================================
 7. LIMITATION OF LIABILITY
---------------------------------------------------------------------------------
+================================================================================
 
-In no event shall the author be liable for any special, incidental, indirect,
-or consequential damages whatsoever arising out of or related to your use or
-inability to use the Item.
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY:
 
---------------------------------------------------------------------------------
-8. TERMINATION
---------------------------------------------------------------------------------
+  • Special, incidental, indirect, or consequential damages
+  • Loss of profits, data, or business opportunities
+  • Business interruption
+  • Personal injury or property damage
 
-This license is effective until terminated. It will terminate automatically
-if you fail to comply with any term of this license agreement. Upon termination,
-you must destroy all copies of the Item in your possession.
+WHETHER ARISING FROM CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR 
+OTHERWISE, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY 
+OF SUCH DAMAGES.
 
---------------------------------------------------------------------------------
-9. GOVERNING LAW
---------------------------------------------------------------------------------
+The Licensor's total aggregate liability shall not exceed the amount 
+you paid for the Item.
 
-This license shall be governed by and construed in accordance with applicable
-international copyright laws and treaties.
+
+================================================================================
+8. INDEMNIFICATION
+================================================================================
+
+You agree to indemnify, defend, and hold harmless the Licensor and its 
+officers, directors, employees, and agents from and against any and all 
+claims, damages, losses, liabilities, costs, and expenses (including 
+reasonable attorney's fees) arising from:
+
+  • Your use of the Item
+  • Your violation of this Agreement
+  • Your violation of any third-party rights
+  • Your End Product created using the Item
+
+
+================================================================================
+9. TERMINATION
+================================================================================
+
+This Agreement is effective until terminated.
+
+AUTOMATIC TERMINATION:
+  This Agreement will terminate automatically without notice if you fail 
+  to comply with any term or condition of this Agreement.
+
+VOLUNTARY TERMINATION:
+  You may terminate this Agreement at any time by destroying all copies 
+  of the Item in your possession.
+
+UPON TERMINATION:
+  • You must destroy all copies of the Item
+  • You must remove the Item from any deployed projects
+  • Sections 4, 6, 7, and 8 shall survive termination
+
+
+================================================================================
+10. GOVERNING LAW
+================================================================================
+
+This Agreement shall be governed by and construed in accordance with 
+applicable international copyright laws and treaties.
+
+Any disputes arising under or in connection with this Agreement shall be 
+resolved through good-faith negotiation. If negotiation fails, disputes 
+shall be submitted to binding arbitration.
+
+
+================================================================================
+11. ENTIRE AGREEMENT
+================================================================================
+
+This Agreement constitutes the entire agreement between you and the 
+Licensor regarding the Item and supersedes all prior and contemporaneous 
+agreements, proposals, or representations, written or oral.
+
+No amendment to or modification of this Agreement will be binding unless 
+in writing and signed by the Licensor.
+
+
+================================================================================
+12. SEVERABILITY
+================================================================================
+
+If any provision of this Agreement is held to be unenforceable or invalid, 
+such provision will be changed and interpreted to accomplish the objectives 
+of such provision to the greatest extent possible under applicable law, and 
+the remaining provisions will continue in full force and effect.
+
+
+================================================================================
+13. CONTACT INFORMATION
+================================================================================
+
+For questions about this license or to purchase additional licenses:
+
+  📧 Email:     support@shopnex.com
+  🌐 Website:   https://shopnex.com
+  📄 Docs:      documentation/index.html
+
+
+================================================================================
+14. ACKNOWLEDGMENT
+================================================================================
+
+BY PURCHASING, DOWNLOADING, OR USING THE ITEM, YOU ACKNOWLEDGE THAT YOU 
+HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS 
+TERMS AND CONDITIONS.
+
+If you do not agree to the terms of this Agreement, do not purchase, 
+download, or use the Item. Request a refund within the applicable 
+refund period if you have already made a purchase.
+
 
 ================================================================================
 
-For questions about licensing, please contact: support@shopnex.com
+Thank you for choosing ShopNex!
 
-Thank you for purchasing ShopNex!
+Your purchase supports continued development and improvement of this 
+template. We are committed to providing you with the best eCommerce 
+template experience.
+
+================================================================================
+
+© 2025 ShopNex. All Rights Reserved.
+
+Last updated: January 2025
+License version: 2.0.0
 
 ================================================================================
