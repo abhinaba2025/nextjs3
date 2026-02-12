@@ -159,7 +159,7 @@ export default function HomePage5() {
                   whileHover={{ y: -5 }}
                   className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden"
                 >
-                  <Link to={`/product/${product.id}`} className="block">
+                  <Link to={`/product/${product.slug}`} className="block">
                     <div className="relative aspect-square p-4">
                       <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                         -{Math.round((1 - product.price / (product.originalPrice || product.price)) * 100)}%
@@ -212,7 +212,7 @@ export default function HomePage5() {
                 transition={{ delay: index * 0.05 }}
                 className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
               >
-                <Link to={`/product/${product.id}`} className="block">
+                <Link to={`/product/${product.slug}`} className="block">
                   <div className="aspect-square p-4 bg-gray-50 dark:bg-gray-700">
                     <img
                       src={product.image}

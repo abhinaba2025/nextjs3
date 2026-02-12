@@ -28,6 +28,11 @@ import FAQPage from './pages/FAQPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 
+// Auth Pages
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+
 // Blog & Magazine
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -78,6 +83,11 @@ function App() {
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+                  
+                  {/* Auth Pages */}
+                  <Route path="/sign-in" element={<SignInPage />} />
+                  <Route path="/sign-up" element={<SignUpPage />} />
+                  <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                   
                   {/* Blog & Magazine */}
                   <Route path="/blog" element={<BlogPage />} />

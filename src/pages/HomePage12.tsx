@@ -235,7 +235,7 @@ export default function HomePage12() {
                 className="flex-shrink-0 w-72"
               >
                 <div className="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <Link to={`/product/${product.id}`} className="block">
+                  <Link to={`/product/${product.slug}`} className="block">
                     <div className="aspect-square p-6 bg-gray-50 dark:bg-gray-700">
                       <img
                         src={product.image}

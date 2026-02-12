@@ -179,7 +179,7 @@ export default function HomePage6() {
                       <Heart className="w-5 h-5" />
                     </motion.button>
                     <Link
-                      to={`/product/${product.id}`}
+                      to={`/product/${product.slug}`}
                       className="w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors"
                     >
                       <Eye className="w-5 h-5" />

@@ -59,7 +59,7 @@ export default function HomePage8() {
                   transition={{ delay: 0.6 }}
                   className="absolute -bottom-8 -right-8 bg-white dark:bg-gray-800 p-6 shadow-xl"
                 >
-                  <p className="text-5xl font-serif text-gray-900 dark:text-white">2026</p>
+                  <p className="text-5xl font-serif text-gray-900 dark:text-white">2024</p>
                   <p className="text-sm text-gray-500 uppercase tracking-widest">Collection</p>
                 </motion.div>
               </div>
@@ -178,7 +178,7 @@ export default function HomePage8() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <Link to={`/product/${product.id}`} className="block">
+                <Link to={`/product/${product.slug}`} className="block">
                   <div className="aspect-[3/4] bg-gray-200 dark:bg-gray-800 overflow-hidden">
                     <img
                       src={product.image}

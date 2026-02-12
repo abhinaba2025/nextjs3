@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <defs>
+    <linearGradient id="iconGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="boltGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#FBBF24"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Shopping Bag -->
+  <path d="M8 14C8 12.8954 8.89543 12 10 12H30C31.1046 12 32 12.8954 32 14V38C32 39.1046 31.1046 40 30 40H10C8.89543 40 8 39.1046 8 38V14Z" fill="url(#iconGradientLight)"/>
+  
+  <!-- Bag Handle -->
+  <path d="M14 12V10C14 6.68629 16.6863 4 20 4C23.3137 4 26 6.68629 26 10V12" stroke="url(#iconGradientLight)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Lightning Bolt -->
+  <path d="M22 16L16 26H20L18 34L26 23H21L24 16H22Z" fill="url(#boltGradientLight)"/>
+  
+  <!-- Text: ShopNex (White for dark backgrounds) -->
+  <text x="42" y="33" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="600" fill="#FFFFFF">
+    Shop<tspan fill="#A5B4FC">Nex</tspan>
+  </text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="lightningGradientWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#FBBF24"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Shopping Bag Body (White) -->
+  <path d="M8 16C8 14.3431 9.34315 13 11 13H37C38.6569 13 40 14.3431 40 16V40C40 41.6569 38.6569 43 37 43H11C9.34315 43 8 41.6569 8 40V16Z" fill="#FFFFFF"/>
+  
+  <!-- Bag Handle -->
+  <path d="M16 13V10C16 6.13401 19.134 3 23 3H25C28.866 3 32 6.13401 32 10V13" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Lightning Bolt -->
+  <path d="M27 18L18 30H24L21 40L33 27H26L30 18H27Z" fill="url(#lightningGradientWhite)"/>
+</svg>

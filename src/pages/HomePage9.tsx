@@ -22,7 +22,7 @@ export default function HomePage9() {
             className="relative z-10 max-w-lg"
           >
             <span className="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm mb-6">
-              New Collection 2026
+              New Collection 2024
             </span>
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
               Discover Your

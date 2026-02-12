@@ -229,7 +229,7 @@ const TermsOfServicePage = () => {
               Please read these terms carefully before using our services.
             </p>
             <p className="text-white/60 mt-4">
-              Last updated: January 1, 2026
+              Last updated: January 1, 2024
             </p>
           </motion.div>
         </div>
@@ -326,7 +326,7 @@ const TermsOfServicePage = () => {
                 use our services.
               </p>
               <p className="text-white/70 text-sm">
-                © 2026 ShopNex. All rights reserved.
+                © 2024 ShopNex. All rights reserved.
               </p>
             </motion.div>
           </div>

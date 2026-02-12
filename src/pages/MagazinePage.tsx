@@ -97,7 +97,7 @@ export default function MagazinePage() {
               Top Stories
             </h2>
             <span className="text-amber-500 font-bold tracking-widest">
-              JANUARY 2026
+              JANUARY 2024
             </span>
           </div>
 

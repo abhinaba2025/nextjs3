@@ -135,7 +135,7 @@ export default function HomePage11() {
                   className="break-inside-avoid group"
                 >
                   <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow">
-                    <Link to={`/product/${product.id}`}>
+                    <Link to={`/product/${product.slug}`}>
                       <div className={`${getMasonryHeight(index)} overflow-hidden`}>
                         <img
                           src={product.image}
@@ -181,7 +181,7 @@ export default function HomePage11() {
                   className="group"
                 >
                   <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow">
-                    <Link to={`/product/${product.id}`}>
+                    <Link to={`/product/${product.slug}`}>
                       <div className="aspect-square overflow-hidden">
                         <img
                           src={product.image}

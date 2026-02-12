@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Product } from '../../data/products';
 import { useCart } from '../../context/CartContext';
@@ -33,11 +34,13 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
     >
       {/* Image Container */}
       <div className="relative aspect-square overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+        <Link to={`/product/${product.slug}`}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </Link>
         
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
@@ -101,9 +104,11 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
       {/* Content */}
       <div className="p-4">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{product.category}</p>
-        <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-1">
-          {product.name}
-        </h3>
+        <Link to={`/product/${product.slug}`}>
+          <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         
         {/* Rating */}
         <div className="flex items-center gap-1 mb-2">

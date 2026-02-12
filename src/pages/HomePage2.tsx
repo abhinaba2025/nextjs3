@@ -19,7 +19,7 @@ export default function HomePage2() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-sm uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
-                New Collection 2026
+                New Collection 2024
               </span>
               <h1 className="mt-4 text-6xl lg:text-8xl font-light text-gray-900 dark:text-white leading-none">
                 Less is
@@ -126,7 +126,7 @@ export default function HomePage2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link to={`/product/${product.id}`} className="group block">
+                <Link to={`/product/${product.slug}`} className="group block">
                   <div className="aspect-square bg-gray-100 dark:bg-gray-700 overflow-hidden">
                     <img
                       src={product.image}

@@ -56,7 +56,7 @@ export default function HomePage7() {
               className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 shadow-lg rounded-full px-6 py-3 mb-8"
             >
               <Sparkles className="w-5 h-5 text-yellow-500" />
-              <span className="text-gray-700 dark:text-gray-300 font-medium">New Summer Collection 2026</span>
+              <span className="text-gray-700 dark:text-gray-300 font-medium">New Summer Collection 2024</span>
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}

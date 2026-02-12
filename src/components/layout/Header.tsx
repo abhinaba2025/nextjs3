@@ -108,13 +108,15 @@ export function Header() {
                 className="flex items-center cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
+                  {/* Logo Icon */}
+                  <img 
+                    src="/images/logos/logo-icon.svg" 
+                    alt="ShopNex" 
+                    className="w-10 h-10"
+                  />
+                  {/* Logo Text - Dark Mode uses light text, Light Mode uses dark text */}
                   <span className="text-2xl font-bold text-slate-900 dark:text-white">
-                    Shop<span className="text-indigo-600">Nex</span>
+                    Shop<span className="text-indigo-600 dark:text-indigo-400">Nex</span>
                   </span>
                 </div>
               </motion.div>
@@ -350,6 +352,28 @@ export function Header() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-3">
+              {/* Sign In / Sign Up - Desktop Only */}
+              <div className="hidden lg:flex items-center gap-2">
+                <Link to="/sign-in">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors"
+                  >
+                    Sign In
+                  </motion.button>
+                </Link>
+                <Link to="/sign-up">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-lg hover:from-indigo-700 hover:to-violet-700 transition-all shadow-md hover:shadow-lg"
+                  >
+                    Sign Up
+                  </motion.button>
+                </Link>
+              </div>
+
               {/* Search */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -562,6 +586,26 @@ export function Header() {
                       <span>{link.name}</span>
                     </Link>
                   ))}
+                </div>
+
+                {/* Account Section - Mobile */}
+                <div className="space-y-2 pt-4 mt-2 border-t dark:border-slate-800">
+                  <Link
+                    to="/sign-in"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-3 text-slate-700 dark:text-slate-200 font-medium border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                  >
+                    <span className="text-lg">👤</span>
+                    Sign In
+                  </Link>
+                  <Link
+                    to="/sign-up"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all"
+                  >
+                    <span className="text-lg">✨</span>
+                    Create Account
+                  </Link>
                 </div>
               </nav>
             </motion.div>

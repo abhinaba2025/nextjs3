@@ -18,7 +18,7 @@ export default function HomePage3() {
     },
     {
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600',
-      subtitle: 'Fall/Winter 2026',
+      subtitle: 'Fall/Winter 2024',
       title: 'Timeless Beauty',
       desc: 'Premium fashion essentials'
     },
@@ -188,7 +188,7 @@ export default function HomePage3() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link to={`/product/${product.id}`} className="group block">
+                <Link to={`/product/${product.slug}`} className="group block">
                   <div className="relative aspect-[3/4] overflow-hidden bg-gray-900">
                     <img
                       src={product.image}

@@ -38,13 +38,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
+              <img 
+                src="/images/logos/logo-icon.svg" 
+                alt="ShopNex" 
+                className="w-10 h-10"
+              />
               <span className="text-2xl font-bold text-white">
-                Shop<span className="text-indigo-500">Nex</span>
+                Shop<span className="text-indigo-400">Nex</span>
               </span>
             </Link>
             <p className="text-slate-400 mb-6 leading-relaxed">
@@ -132,7 +132,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-400 text-sm">
-              © 2026 ShopNex. All rights reserved. Built with ♥ using React & Tailwind.
+              © 2024 ShopNex. All rights reserved. Built with ♥ using React & Tailwind.
             </p>
             <div className="flex items-center gap-4 text-slate-500 text-sm">
               <span>Visa</span>

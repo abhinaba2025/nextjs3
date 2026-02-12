@@ -64,13 +64,13 @@ export const magazineArticles: MagazineArticle[] = [
       'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop'
     ],
     category: 'Fashion',
-    issue: 'January 2026',
+    issue: 'January 2024',
     author: {
       name: 'Isabella Romano',
       avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop',
       role: 'Fashion Director'
     },
-    date: '2026-01-20',
+    date: '2024-01-20',
     readTime: '15 min read',
     tags: ['Fashion', 'Sustainability', 'Environment', 'Innovation'],
     featured: true
@@ -120,13 +120,13 @@ export const magazineArticles: MagazineArticle[] = [
       'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop'
     ],
     category: 'Technology',
-    issue: 'January 2026',
+    issue: 'January 2024',
     author: {
       name: 'Marcus Chen',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
       role: 'Technology Editor'
     },
-    date: '2026-01-18',
+    date: '2024-01-18',
     readTime: '12 min read',
     tags: ['Technology', 'AI', 'Innovation', 'Future'],
     featured: true
@@ -172,21 +172,21 @@ export const magazineArticles: MagazineArticle[] = [
       'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop'
     ],
     category: 'Design',
-    issue: 'January 2026',
+    issue: 'January 2024',
     author: {
       name: 'Sophie Nakamura',
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop',
       role: 'Architecture Correspondent'
     },
-    date: '2026-01-15',
+    date: '2024-01-15',
     readTime: '14 min read',
     tags: ['Architecture', 'Design', 'Sustainability', 'Urban'],
     featured: false
   },
   {
     id: 4,
-    slug: 'wellness-revolution-2026',
-    title: 'The Wellness Revolution of 2026',
+    slug: 'wellness-revolution-2024',
+    title: 'The Wellness Revolution of 2024',
     subtitle: 'From biohacking to mindfulness, the new frontiers of personal health',
     excerpt: 'Explore the cutting-edge wellness trends that are helping people optimize their physical and mental health.',
     content: `
@@ -227,13 +227,13 @@ export const magazineArticles: MagazineArticle[] = [
       'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop'
     ],
     category: 'Wellness',
-    issue: 'January 2026',
+    issue: 'January 2024',
     author: {
       name: 'Dr. Elena Vasquez',
       avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop',
       role: 'Wellness Editor'
     },
-    date: '2026-01-12',
+    date: '2024-01-12',
     readTime: '11 min read',
     tags: ['Wellness', 'Health', 'Mindfulness', 'Lifestyle'],
     featured: true
@@ -283,7 +283,7 @@ export const magazineArticles: MagazineArticle[] = [
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
       role: 'Business Editor'
     },
-    date: '2026-01-08',
+    date: '2024-01-08',
     readTime: '10 min read',
     tags: ['Business', 'Remote Work', 'Future', 'Technology'],
     featured: false
@@ -333,7 +333,7 @@ export const magazineArticles: MagazineArticle[] = [
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
       role: 'Food & Travel Writer'
     },
-    date: '2026-01-05',
+    date: '2024-01-05',
     readTime: '13 min read',
     tags: ['Travel', 'Food', 'Culture', 'Culinary'],
     featured: false
@@ -383,7 +383,7 @@ export const magazineArticles: MagazineArticle[] = [
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop',
       role: 'Street Style Editor'
     },
-    date: '2026-01-02',
+    date: '2024-01-02',
     readTime: '12 min read',
     tags: ['Fashion', 'Street Style', 'Culture', 'Trends'],
     featured: false
