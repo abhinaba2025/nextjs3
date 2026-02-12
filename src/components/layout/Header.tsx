@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Heart, Search, Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Heart, Search, Menu, X, Sun, Moon, ChevronDown, User, LogIn, UserPlus, Package, HelpCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -14,6 +14,7 @@ export function Header() {
   const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isHelpDropdownOpen, setIsHelpDropdownOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const { totalItems, toggleCart } = useCart();
   const { items: wishlistItems } = useWishlist();
   const { theme, toggleTheme } = useTheme();
@@ -352,26 +353,131 @@ export function Header() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-3">
-              {/* Sign In / Sign Up - Desktop Only */}
-              <div className="hidden lg:flex items-center gap-2">
-                <Link to="/sign-in">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Sign In
-                  </motion.button>
-                </Link>
-                <Link to="/sign-up">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-lg hover:from-indigo-700 hover:to-violet-700 transition-all shadow-md hover:shadow-lg"
-                  >
-                    Sign Up
-                  </motion.button>
-                </Link>
+              {/* Profile Dropdown - Desktop Only */}
+              <div 
+                className="relative hidden lg:block"
+                onMouseEnter={() => setIsProfileDropdownOpen(true)}
+                onMouseLeave={() => setIsProfileDropdownOpen(false)}
+              >
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <User className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                </motion.button>
+
+                <AnimatePresence>
+                  {isProfileDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full right-0 pt-4"
+                    >
+                      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-4 min-w-[280px]">
+                        {/* Sign In / Sign Up Section */}
+                        <div className="mb-4">
+                          <div className="flex items-center gap-3 mb-3 pb-3 border-b border-slate-100 dark:border-slate-700">
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center">
+                              <User className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <p className="font-medium text-slate-900 dark:text-white">Welcome!</p>
+                              <p className="text-sm text-slate-500 dark:text-slate-400">Sign in to continue</p>
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2">
+                            <Link
+                              to="/sign-in"
+                              onClick={() => setIsProfileDropdownOpen(false)}
+                            >
+                              <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                              >
+                                <LogIn className="w-4 h-4" />
+                                Sign In
+                              </motion.button>
+                            </Link>
+                            <Link
+                              to="/sign-up"
+                              onClick={() => setIsProfileDropdownOpen(false)}
+                            >
+                              <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all"
+                              >
+                                <UserPlus className="w-4 h-4" />
+                                Sign Up
+                              </motion.button>
+                            </Link>
+                          </div>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="space-y-1">
+                          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Quick Links</p>
+                          <Link
+                            to="/account"
+                            onClick={() => setIsProfileDropdownOpen(false)}
+                            className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                              <User className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">My Account</p>
+                              <p className="text-xs text-slate-500">Manage your profile</p>
+                            </div>
+                          </Link>
+                          <Link
+                            to="/cart"
+                            onClick={() => setIsProfileDropdownOpen(false)}
+                            className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400">
+                              <Package className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">My Orders</p>
+                              <p className="text-xs text-slate-500">Track your orders</p>
+                            </div>
+                          </Link>
+                          <Link
+                            to="/wishlist"
+                            onClick={() => setIsProfileDropdownOpen(false)}
+                            className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600 dark:text-rose-400">
+                              <Heart className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">Wishlist</p>
+                              <p className="text-xs text-slate-500">Your saved items</p>
+                            </div>
+                          </Link>
+                          <Link
+                            to="/faq"
+                            onClick={() => setIsProfileDropdownOpen(false)}
+                            className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                              <HelpCircle className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">Help & Support</p>
+                              <p className="text-xs text-slate-500">FAQs and assistance</p>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Search */}
@@ -589,23 +695,46 @@ export function Header() {
                 </div>
 
                 {/* Account Section - Mobile */}
-                <div className="space-y-2 pt-4 mt-2 border-t dark:border-slate-800">
-                  <Link
-                    to="/sign-in"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full py-3 text-slate-700 dark:text-slate-200 font-medium border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-                  >
-                    <span className="text-lg">👤</span>
-                    Sign In
-                  </Link>
-                  <Link
-                    to="/sign-up"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all"
-                  >
-                    <span className="text-lg">✨</span>
-                    Create Account
-                  </Link>
+                <div className="space-y-3 pt-4 mt-2 border-t dark:border-slate-800">
+                  <p className="px-4 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    My Account
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Link
+                      to="/sign-in"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2 py-3 text-slate-700 dark:text-slate-200 font-medium border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <LogIn className="w-4 h-4" />
+                      Sign In
+                    </Link>
+                    <Link
+                      to="/sign-up"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all"
+                    >
+                      <UserPlus className="w-4 h-4" />
+                      Sign Up
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Link
+                      to="/account"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-2 p-3 text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <User className="w-4 h-4" />
+                      Profile
+                    </Link>
+                    <Link
+                      to="/cart"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-2 p-3 text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    >
+                      <Package className="w-4 h-4" />
+                      Orders
+                    </Link>
+                  </div>
                 </div>
               </nav>
             </motion.div>
